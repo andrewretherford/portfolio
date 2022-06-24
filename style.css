@@ -4,7 +4,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* HOME PAGE */
+/* -------------------- HOME PAGE -------------------- */
 
 .home-page-container {
     background-color: lightgray;
@@ -12,6 +12,7 @@ html, body {
     padding-bottom: 5vh;
 }
 
+/* inner navigation elements */
 .center-menu {
     display: flex;
     flex-wrap: wrap;
@@ -21,20 +22,20 @@ html, body {
 
 .inner-nav {
     width: 40%;
-    height: 20%;
 }
 
-#favorite-things-nav {
+#center-nav {
     width: 70%;
-    height: 70%;
 }
 
 .inner-nav>img {
     max-width: 100%;
     max-height: 100%;
     margin-top: 10%;
+    display: block;
 }
 
+/* outer navigation elements */
 .outer-nav {
     width: 28vw;
     margin: 3vh 36vw 0vh 36vw;
@@ -46,7 +47,7 @@ html, body {
 }
 
 
-/* hide elements */
+/* hide elements with .hide class */
 .hide {
     display: none;
 }

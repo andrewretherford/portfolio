@@ -33,7 +33,7 @@
 ### home page
 <!-- - center elements on page
 - play with sizing -->
-- set background color (replace with image later)
+<!-- - set background color (replace with image later) -->
 
 ### bio/resume page
 - align bio and resume div containers with flexbox
@@ -49,8 +49,8 @@
 
 ## JS
 
-- add event listeners to nav elements
-- implement basic page switching functionality in the associated event handlers
+<!-- - add event listeners to nav elements -->
+<!-- - implement basic page switching functionality in the associated event handlers -->
 
 ---
 
