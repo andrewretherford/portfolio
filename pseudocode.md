@@ -18,23 +18,21 @@
  - div for image -->
 <!-- - div container for resume images and link
  - div * 3 for images and link box
-- nav container for back to home link -->
- - link to home page
+- nav for back to home link -->
 
 ### project showcase
 
 <!-- - div container for project elements
  - div * 5 for projects
   - div * 2 for image and text -->
-<!-- - nav container for back to home link -->
- - link to home page
+<!-- - nav for back to home link -->
 
 
 ## CSS
 
 ### home page
-- center elements on page
-- play with sizing
+<!-- - center elements on page
+- play with sizing -->
 - set background color (replace with image later)
 
 ### bio/resume page

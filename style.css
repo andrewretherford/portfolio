@@ -1,5 +1,52 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+/* HOME PAGE */
+
+.home-page-container {
+    background-color: lightgray;
+    padding-top: 2vh;
+    padding-bottom: 5vh;
+}
+
+.center-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;    
+}
+
+.inner-nav {
+    width: 40%;
+    height: 20%;
+}
+
+#favorite-things-nav {
+    width: 70%;
+    height: 70%;
+}
+
+.inner-nav>img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-top: 10%;
+}
+
+.outer-nav {
+    width: 28vw;
+    margin: 3vh 36vw 0vh 36vw;
+    display: inline-block;
+}
+
+.outer-nav>img {
+    max-width: 100%
+}
 
 
+/* hide elements */
 .hide {
     display: none;
 }
