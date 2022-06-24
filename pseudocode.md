@@ -74,6 +74,12 @@
 ### home page
   - add style for .expand class **silver**
 
+### bio/resume page
+- research special characters and include in the back to home nav
+
+### project showcase
+- research special characters and include in the back to home nav
+
 ## JS
 
 ### home page
