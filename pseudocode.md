@@ -2,9 +2,6 @@
 
 ## HTML
 
-- three separate pages or all same page?
- - build on one page first for testing
-
 ### home page
 <!-- - nav container for menu elements -->
 <!-- - div container for center three elements -->
@@ -36,16 +33,16 @@
 <!-- - set background color (replace with image later) -->
 
 ### bio/resume page
-- align bio and resume div containers with flexbox
+<!-- - align bio and resume div containers with flexbox
 - align bio text and image divs with flexbox
 - align resume divs with flexbox
-- align nav
+- align nav -->
 
 ### project showcase
-- align project divs with flexbox
+<!-- - align project divs with flexbox
  - align image and text within each div
 - align nav
-- play with sizing
+- play with sizing -->
 
 ## JS
 
