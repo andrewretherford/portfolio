@@ -36,7 +36,7 @@ function homeMenuNavHandler(e) {
             // showHide(homePageContainer)
             break
 
-        case 'bio-resume-nav': console.log('bio case')
+        case 'bio-resume-nav':
             showHide(homePageContainer)
             showHide(bioPageContainer)
             break
