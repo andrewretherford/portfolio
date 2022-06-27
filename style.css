@@ -1,3 +1,7 @@
+* {
+    background-color: rgb(0, 100, 0, 0.2);
+  }
+
 html, body {
     margin: 0px;
     padding: 0px;
@@ -7,9 +11,18 @@ html, body {
 /* -------------------- HOME PAGE -------------------- */
 
 .home-page-container {
+    height: 100vh;
+    width: auto;
     background-color: lightgray;
-    padding-top: 2vh;
-    padding-bottom: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+.home-menu-nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* inner navigation elements */
@@ -25,7 +38,8 @@ html, body {
 }
 
 #center-nav {
-    width: 70%;
+    width: fit-content;
+    margin: 0 10vw;
 }
 
 .inner-nav>img {
@@ -37,16 +51,21 @@ html, body {
 
 /* outer navigation elements */
 .outer-nav {
-    width: 28vw;
-    margin: 3vh 36vw 0vh 36vw;
-    display: inline-block;
+    max-width: 28vw;
+    margin-top: 3vh;
 }
 
 .outer-nav>img {
-    max-width: 100%
+    max-width: 100%;
+    display: block;
 }
 
 /* -------------------- BIO/RESUME PAGE -------------------- */
+
+.bio-page-container {
+    height: 100vh;
+    width: 100vw;
+}
 
 /* ---------- bio ---------- */
 .bio-container {
@@ -93,6 +112,8 @@ html, body {
 /* -------------------- PROJECT SHOWCASE -------------------- */
 
 .project-page-container {
+    height: auto;
+    width: auto;
     background-color: rgb(125, 125, 125, 1);
 }
 
@@ -108,14 +129,10 @@ html, body {
 }
 
 .project-image {
-
+    
     max-width: 100%;
     margin-top: 3vh;
 }
-
-/* .project:first-child {
-    padding-top: 2vh;
-} */
 
 .project-text {
     max-width: 100%;
@@ -138,4 +155,91 @@ html, body {
 /* hide elements with .hide class */
 .hide {
     display: none;
+}
+
+/* -------------------- MEDIA QUERIES -------------------- */
+/* ------------------------------------------------------- */
+
+@media screen and (min-width: 768px) { /* --- Mobile/Tablet --- */
+    
+/* -------------------- HOME PAGE -------------------- */
+
+    .home-menu-nav-container {
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: auto;
+
+    }
+    
+    .center-menu {
+        max-width: 60vw;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-items: center;
+        order: 1;
+    }
+
+    .inner-nav {
+        max-width: 25%;
+    }
+
+    #center-nav {
+        max-width: 35%;
+        margin: 0px;
+        order: 1;
+    }
+
+    #project-showcase-container, #sites-of-interest-container {
+        order: 2;
+    }
+
+    .outer-nav {
+        width: 10vw;
+        margin: 0px;
+    }
+
+    .inner-nav>img, .outer-nav>img {
+        margin: 0px;
+    }
+
+    /* -------------------- BIO/RESUME PAGE -------------------- */
+    .bio-page-container {
+        display: flex;
+
+    }
+
+    .bio-container {
+        justify-content: start;
+    }
+
+    .bio-photo-container, .bio-text-block-two {
+        order: 0;
+        max-width: 50%;
+        height: 20%;
+    }
+
+    .bio-photo {
+        max-width: 100%;
+    }
+
+    .resume-container {
+        max-width: 30vw;
+    }
+}
+
+
+
+@media screen and (min-width: 2165px) { /* --- Large Screens --- */
+    
+    .home-menu-nav-container {
+        max-width: 2165px;
+    }
+
+    .outer-nav {
+        max-width: 216.5px;
+    }
 }
