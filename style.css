@@ -1,5 +1,5 @@
 * {
-    background-color: rgb(0, 100, 0, 0.2);
+    /* background-color: rgb(0, 100, 0, 0.2); */
   }
 
 html, body {
@@ -71,18 +71,18 @@ html, body {
 /* ---------- bio ---------- */
 .bio-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 100vw;
+    flex-direction: column;
+    width: 100vw;
 }
 
 .bio-photo-container {
-    width: 100vh;
+    width: 100%;
     margin-bottom: 2vh;
 }
 
 .bio-photo {
     width: 100%;
+    max-height: 30vh;
     display: block;
 }
 
@@ -119,29 +119,38 @@ html, body {
 }
 
 .projects-container {
+    height: auto;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 1vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 3vh;
 }
 
-.project {
+.project-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     max-width: 70vw;
 }
 
+.project {
+    width: 100%;
+    background-color: rgb(60, 60, 60, .5);
+    margin-bottom: 3vh;
+}
+
 .project-image {
-    
-    max-width: 100%;
-    margin-top: 3vh;
+    width: 100%;
+    /* margin-top: 3vh; */
 }
 
 .project-text {
     max-width: 100%;
-    padding-bottom: 4vh;
     color: rgb(240, 240, 240, 1);
     font-size: 1.3rem;
     text-align: justify;
-    border-bottom: solid rgb(85, 85, 85, 1) 1px;
+    padding: 0 1rem 0 1rem;
 }
 
 #last-project-text {
@@ -149,7 +158,7 @@ html, body {
     padding-bottom: 0px;
 }
 
-.best-project {
+.projects-center-block {
     order: -1;
 }
 
@@ -170,7 +179,7 @@ html, body {
 /* -------------------- MEDIA QUERIES -------------------- */
 /* ------------------------------------------------------- */
 
-@media screen and (min-width: 768px) { /* --- Mobile/Tablet --- */
+@media screen and (min-width: 768px) { /* --- Small Screens & Laptops --- */
     
 /* -------------------- HOME PAGE -------------------- */
 
@@ -216,14 +225,30 @@ html, body {
         margin: 0px;
     }
 
-    /* -------------------- BIO/RESUME PAGE -------------------- */
+/* -------------------- BIO/RESUME PAGE -------------------- */
+
+    
+
+
+
+}
+
+@media screen and (min-width: 1025px) { /* --- Desktops / Large Screens --- */
+
+/* -------------------- BIO/RESUME PAGE -------------------- */
+
+    .bio-page-container {
+        height: 100vh;
+        margin: auto;
+    }
+
     .bio-resume-container {
+        max-width: 100vh;
         display: flex;
-        justify-content: space-between;
     }
 
     .bio-container {
-        max-width: 60vw;
+        width: 65vw;
         margin: 0px;
     }
 
@@ -232,7 +257,7 @@ html, body {
     }
 
     .resume-container {
-        max-width: 35vw;
+        width: 30vw;
         margin: 0px;
     }
 
@@ -240,24 +265,70 @@ html, body {
         width: 100%;
         height: 33.333%;
     }
-    
+
     .resume-block>img {
         height: 100%;
         width: 100%;
         display: block;
     }
+
+    .bio-page-container {
+        max-width: 1080px;
+    }
+
+    .bio-container {
+        max-width: 1025px;
+    }
+
+/* -------------------- PROJECT SHOWCASE -------------------- */
+
+    .projects-container {
+        height: 90vh;
+        flex-direction: row;
+    }
+
+    .project-block {
+        height: 100%;
+        width: 25vw;
+        justify-content: space-around;
+    }
+
+    .projects-center-block {
+        order: 0;
+        width: 40vw;
+    }
+    
 }
 
 
+@media screen and (min-width: 2160px) { /* --- Extra Large Screens --- */
+ 
+/* -------------------- HOME PAGE -------------------- */
 
-@media screen and (min-width: 2165px) { /* --- Large Screens --- */
-    
     .home-menu-nav-container {
-        max-width: 2165px;
+        max-width: 2160px;
     }
 
     .outer-nav {
-        max-width: 216.5px;
+        max-width: 216px;
+    }
+
+/* -------------------- BIO/RESUME PAGE -------------------- */
+
+
+/* -------------------- PROJECT SHOWCASE -------------------- */
+
+    .projects-container, #project-back {
+        max-width: 2160px;
+        margin: auto;
+    }
+
+    .project-block {
+        max-width: 432px;
+    }
+
+    .projects-center-block {
+        max-width: 864px;
     }
 }
 
