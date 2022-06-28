@@ -1,5 +1,7 @@
 # Portfolio
 
+![portfolio cover page](./images/portfolio-cover.png)
+
 ## Approach
 
 I used a large project approach when building this site, following the normal stages and processes involved when planning for and executing an enterprise application.  The steps are outlined as follows:
