@@ -44,7 +44,7 @@ const sitesOfInterest = document.querySelector('.sites-of-interest')
 const resumeModal = document.querySelector('#resume-modal')
 const resumeLink = document.querySelector('.resume-link')
 
-// event handlers 
+// event handlers
 // ------------------------------------------------------------ //
 
 function homeMenuNavHandler(e) {
@@ -65,21 +65,21 @@ function homeMenuNavHandler(e) {
             showHide(projectPageContainer)
             break
         
-        case 'professional-links-nav':
-            showHide(professionalLinksNav)
-            showHide(professionalLinks)
-            break
+        // case 'professional-links-nav':
+        //     showHide(professionalLinksNav)
+        //     showHide(professionalLinks)
+        //     break
 
-        case 'sites-of-interest-nav':
-            showHide(sitesOfInterestNav)
-            showHide(sitesOfInterest)
-            break
+        // case 'sites-of-interest-nav':
+        //     showHide(sitesOfInterestNav)
+        //     showHide(sitesOfInterest)
+        //     break
 
         default: return
     }
 }
 
-function navExpandHandler(e) { console.log(e.target.tagName)
+function navExpandHandler(e) {
     if(e.target.tagName != 'IMG') return;
     
     switch(e.target.id) {
@@ -96,7 +96,7 @@ function navExpandHandler(e) { console.log(e.target.tagName)
         case 'sites-of-interest-nav':
             showHide(sitesOfInterestNav)
             showHide(sitesOfInterest)
-            let siteChildren = professionalLinks.children
+            let siteChildren = sitesOfInterest.children
             for(let i=0; i < siteChildren.length; i++) {
                 setTimeout(expandOrShrink, 10, siteChildren[i])
             }
@@ -106,14 +106,14 @@ function navExpandHandler(e) { console.log(e.target.tagName)
     }
 }
 
-function navShrinkHandler(e) { console.log(e.target.tagName)
+function navShrinkHandler(e) {
     if(e.target.tagName != 'DIV') return;
 
     switch(e.target.id) {
 
         case 'professional-links-div': 
-            setTimeout(showHide, 500, professionalLinksNav)
-            setTimeout(showHide, 500, professionalLinks)
+            profLinksTimeoutNav = setTimeout(showHide, 500, professionalLinksNav)
+            profLinksTimeout = setTimeout(showHide, 500, professionalLinks)
             let profChildren = professionalLinks.children
             for(let i=0; i < profChildren.length; i++) {
                 expandOrShrink(profChildren[i])
@@ -121,9 +121,9 @@ function navShrinkHandler(e) { console.log(e.target.tagName)
             break
 
         case 'sites-of-interest-div':
-            setTimeout(showHide, 500, sitesOfInterestNav)
-            setTimeout(showHide, 500, sitesOfInterest)
-            let siteChildren = professionalLinks.children
+            siteNavTimeout = setTimeout(showHide, 500, sitesOfInterestNav)
+            siteTimeout = setTimeout(showHide, 500, sitesOfInterest)
+            let siteChildren = sitesOfInterest.children
             for(let i=0; i < siteChildren.length; i++) {
                 expandOrShrink(siteChildren[i])
             }
@@ -142,16 +142,16 @@ function windowClickHandler(e) {
         showHide(resumeModal)
     }
 
-    if(!homePageContainer.classList.contains('hide') && e.target.tagName != 'IMG') {
-        if(!professionalLinks.classList.contains('hide')) {
-            showHide(professionalLinks)
-            showHide(professionalLinksNav)
-        }
-        if(!sitesOfInterest.classList.contains('hide')) {
-            showHide(sitesOfInterest)
-            showHide(sitesOfInterestNav)
-        }
-    }
+    // if(!homePageContainer.classList.contains('hide') && e.target.tagName != 'IMG') {
+    //     if(!professionalLinks.classList.contains('hide')) {
+    //         showHide(professionalLinks)
+    //         showHide(professionalLinksNav)
+    //     }
+    //     if(!sitesOfInterest.classList.contains('hide')) {
+    //         showHide(sitesOfInterest)
+    //         showHide(sitesOfInterestNav)
+    //     }
+    // }
 }
 
 function toHomeHandler(e) {

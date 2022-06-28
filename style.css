@@ -1,5 +1,5 @@
 * {
-    background-color: rgb(0, 100, 0, 0.2);
+    /* background-color: rgb(0, 100, 0, 0.2); */
   }
 
 html, body {
@@ -35,11 +35,11 @@ html, body {
 }
 
 .inner-nav {
-    width: 40%;
+    width: 30%;
 }
 
 #center-nav {
-    width: fit-content;
+    width: 50%;
     margin: 0 10vw;
 }
 
@@ -53,7 +53,7 @@ html, body {
 /* outer navigation elements */
 .outer-nav {
     max-width: 28vw;
-    margin-top: 3vh;
+    margin-top: 8vh;
 }
 
 .outer-nav>img {
@@ -62,7 +62,7 @@ html, body {
 }
 
 .professional-links, .sites-of-interest {
-    height: 8vh;
+    height: 10vh;
     width: 24vw;
     display: flex;
     flex-direction: column;
@@ -73,8 +73,9 @@ html, body {
 .professional-links>a, .sites-of-interest>a {
     color: rgb(50, 50, 50, 1);
     font-weight: bold;
-    text-decoration: none;
     font-size: 1.2rem;
+    text-decoration: none;
+    text-align: center;
     margin: 0px;
     transition: margin 1s;
 }
@@ -226,7 +227,7 @@ html, body {
 
 /* grow elements */
 .grow {
-    transition: all .2s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 .grow:hover {
@@ -297,6 +298,9 @@ html, body {
         margin: 0px;
     }
 
+    .professional-links, .sites-of-interest {
+        width: auto;
+    }
 }
 
 @media screen and (min-width: 1025px) { /* --- Desktops / Large Screens --- */

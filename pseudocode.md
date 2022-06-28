@@ -67,7 +67,7 @@
 - [x] add style for .grow class **silver**
 
 ### home page
-  - [ ] add style for .expand class **silver**
+  - [X] add style for .expand class **silver**
 
 ### bio/resume page
 ~~- research special characters and include in the back to home nav~~
