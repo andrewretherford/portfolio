@@ -51,7 +51,7 @@ Although I was able to create a good working base, there is much that I would st
 
 ### Link to Live Page
 
-Please check out my live [portfolio](https://andrewretherford.github.io/portfolio/).
+Please check out my live [portfolio](https://andrewretherford.github.io/portfolio/)
 
 ## About Me
 
