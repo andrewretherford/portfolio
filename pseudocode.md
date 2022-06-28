@@ -3,86 +3,86 @@
 ## HTML
 
 ### home page
-<!-- - nav container for menu elements -->
-<!-- - div container for center three elements -->
- <!-- - div for each inner element -->
-<!-- - div for each outer element -->
- <!-- - expand class -->
+- [x] nav container for menu elements
+- [x] div container for center three elements
+ - [x] div for each inner element
+- [x] div for each outer element
+ - [x] expand class
 
 ### bio/resume page
-<!-- - div container for bio and image
- - div * 3 for text
- - div for image -->
-<!-- - div container for resume images and link
- - div * 3 for images and link box
-- nav for back to home link -->
+- [x] div container for bio and image
+ - [x] div * 3 for text
+ - [x] div for image
+- [x] div container for resume images and link
+ - [x] div * 3 for images and link box
+- [x] nav for back to home link
 
 ### project showcase
 
-<!-- - div container for project elements
- - div * 5 for projects
-  - div * 2 for image and text -->
-<!-- - nav for back to home link -->
+- [x] div container for project elements
+ - [x] div * 5 for projects
+  - [x] div * 2 for image and text
+- [x] nav for back to home link
 
 
 ## CSS
 
 ### home page
-<!-- - center elements on page
-- play with sizing -->
-<!-- - set background color (replace with image later) -->
+- [x] center elements on page
+- [x] play with sizing
+- [x] set background color (replace with image later)
 
 ### bio/resume page
-<!-- - align bio and resume div containers with flexbox
-- align bio text and image divs with flexbox
-- align resume divs with flexbox
-- align nav -->
+- [x] align bio and resume div containers with flexbox
+- [x] align bio text and image divs with flexbox
+- [x] align resume divs with flexbox
+- [x] align nav
 
 ### project showcase
-<!-- - align project divs with flexbox
- - align image and text within each div
-- align nav
-- play with sizing -->
+- [x] align project divs with flexbox
+ - [x] align image and text within each div
+- [x] align nav
+- [x] play with sizing
 
 ## JS
 
-<!-- - add event listeners to nav elements -->
-<!-- - implement basic page switching functionality in the associated event handlers -->
+- [x] add event listeners to nav elements
+- [x] implement basic page switching functionality in the associated event handlers
 
 ---
 
 # Stretch
 
-- figure out how to host working projects and link to them **gold**
+- [ ] figure out how to host working projects and link to them **gold**
 
 ## HTML
 
 ## CSS
 
-- adjust all font sizes**bronze**
-- implement media queries for standard break points **bronze**
-- add style for .hide class **bronze**
-- choose a font **silver**
-- source images and backgrounds **silver**
-- add style for .grow class **silver**
+- [ ] adjust all font sizes **bronze**
+- [x] implement media queries for standard break points **bronze**
+- [x] add style for .hide class **bronze**
+- [ ] choose a font **silver**
+- [ ] source images and backgrounds **silver**
+- [x] add style for .grow class **silver**
 
 ### home page
-  - add style for .expand class **silver**
+  - [X] add style for .expand class **silver**
 
 ### bio/resume page
-- research special characters and include in the back to home nav
+~~- research special characters and include in the back to home nav~~
 
 ### project showcase
-- research special characters and include in the back to home nav
+~~- research special characters and include in the back to home nav~~
 
 ## JS
 
 ### home page
-- implement infinite scrolling menu **gold**
+- [ ] implement infinite scrolling menu **gold**
 
 ### bio/resume page
-- implement modal for resume link **silver**
-  - add ability to download resume from the modal **gold**
+- [x] implement modal for resume link **silver**
+  - [x] add ability to download resume from the modal **gold**
 
 ### project showcase
-- implement modal with live versions for projects **gold**
+- [ ] implement modal with live versions for projects **gold**

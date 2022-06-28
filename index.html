@@ -19,23 +19,32 @@
             <!-- navigation bar -->
             <nav class="home-menu-nav-container">
                 <nav class="center-menu">
-                    <nav class="inner-nav" id="center-nav">
+                    <nav class="inner-nav grow" id="center-nav">
                         <img src="images/portfolio-stub.png" alt="portfolio image" id="favorite-things-nav">
                     </nav>
-                    <nav class="inner-nav" id="bio-resume-container">
-                        <img src="images/portfolio-stub.png" alt="portfolio image" id="bio-resume-nav">
+                    <nav class="inner-nav grow" id="bio-resume-container">
+                        <img src="images/bio-stub.png" alt="portfolio image" id="bio-resume-nav">
                     </nav>
-                    <nav class="inner-nav" id="project-showcase-container">
-                        <img src="images/portfolio-stub.png" alt="portfolio image" id="project-showcase-nav">
+                    <nav class="inner-nav grow" id="project-showcase-container">
+                        <img src="images/projects.png" alt="portfolio image" id="project-showcase-nav">
                     </nav>
                 </nav>
 
-                <nav class="outer-nav expand" id="professional-links-container">
-                    <img src="images/portfolio-stub.png" alt="portfolio image" id="professional-links">
+                <nav class="outer-nav" id="professional-links-container">
+                    <div class="professional-links hide" id="professional-links-div">
+                        <a href="https://github.com/andrewretherford" class="git-hub">GitHub</a>
+                        <a href="https://www.linkedin.com/in/andrew-retherford" class="linked-in">LinkedIn</a>
+                    </div>
+                    <img src="images/professional-links.png" alt="portfolio image" id="professional-links-nav">
                 </nav>
                 
-                <nav class="outer-nav expand" id="sites-of-interest-container">
-                    <img src="images/portfolio-stub.png" alt="portfolio image" id="sites-of-interest">
+                <nav class="outer-nav" id="sites-of-interest-container">
+                    <div class="sites-of-interest hide" id="sites-of-interest-div">
+                        <a href="https://www.codewars.com/">Code Wars</a>
+                        <a href="https://fontawesome.com/">Font Awesome</a>
+                        <a href="https://www.youtube.com/channel/UCcMDMoNu66_1Hwi5-MeiQgw">Hydraulic Press Channel</a>
+                    </div>
+                    <img src="images/interesting-sites.png" alt="portfolio image" id="sites-of-interest-nav">
                 </nav>  
             </nav>
         </div>
@@ -44,7 +53,15 @@
 
         <!-- bio/resume page container -->
         <div class="bio-page-container hide">
-            
+            <!-- resume modal -->
+            <div class="modal hide" id="resume-modal">
+                <div class="resume-content">
+                    <!-- <span class="close">&times;</span> -->
+                    <iframe src="/assets/Resume.pdf" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <!-- bio and resume -->
             <div class="bio-resume-container">
                 <!-- bio -->
                 <div class="bio-container">
@@ -52,15 +69,14 @@
                     <div class="bio-photo-container"><img src="images/bio-stub.png" alt="bio photo" class="bio-photo"></div>
 
                     <div class="bio-text-container">
-                        <p class="bio-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis dolorum aut, ipsam aperiam illum perferendis obcaecati voluptatum fugit magnam consectetur? Maiores quis dolorem enim illo labore sint ab animi molestias! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Exercitationem, cupiditate laborum distinctio labore, quaerat nihil, ipsam repellendus nostrum nesciunt assumenda accusantium atque doloribus nisi! Eum voluptatibus minus consequuntur facilis reiciendis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veniam, esse architecto. Quaerat recusandae aut at error iusto magni, dicta maxime fuga quis porro reiciendis, provident eos repellendus officia quae natus!
-                        Perspiciatis, quod. Ex minima alias eos asperiores optio. Deserunt repellat odit, enim officia ut assumenda voluptates earum, perspiciatis mollitia corporis provident. Ullam quasi omnis repudiandae nesciunt temporibus. Deserunt, ipsa nisi!
-                        Quae, ullam officia quisquam perferendis deleniti eum nemo praesentium rem laudantium voluptatibus provident modi expedita animi amet cum? Consequatur eveniet quod eum suscipit cupiditate ea aliquid, nam est dolore! Earum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id sequi tenetur dolores nobis nemo laborum a quae ducimus voluptas explicabo praesentium ratione excepturi, inventore cupiditate similique, perspiciatis impedit nostrum aperiam!
-                        Voluptatibus, iste vero est corrupti voluptas vel suscipit perspiciatis voluptatum dignissimos minus odit distinctio quis sed fugiat, sint impedit consectetur facere harum id. Sunt suscipit magnam similique in nam molestias?
-                        Repellendus, neque est illum error deserunt natus voluptates laudantium similique quisquam, mollitia inventore? Ex sunt ducimus quisquam debitis vero commodi et eum? Iusto assumenda aut natus nihil sequi quis illum? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel qui debitis, magni magnam laboriosam minima et deleniti, perspiciatis sapiente neque omnis facilis repudiandae velit incidunt, dolorem ex ullam dolor. At!
-                        Quaerat voluptate, non eveniet similique tempore sapiente voluptates illum eius ipsa pariatur quis aspernatur quod numquam? Asperiores soluta fugit itaque cupiditate dolorem, doloremque aut eius perspiciatis mollitia libero laborum labore?
-                        Sit quisquam, officiis fugit magnam sequi ad inventore ex quae delectus aliquam dolorem iure laboriosam id. Accusamus nemo omnis maxime dicta asperiores vero, eum earum. Voluptatibus quo incidunt numquam ipsam?
-                        Dolores consequatur amet voluptatibus cum modi. Ratione, soluta debitis voluptatibus quis atque inventore dicta officia, ab ipsum nostrum sequi neque expedita aspernatur consectetur commodi molestiae alias? Unde cum accusantium sunt?
-                        Minima, ipsa in! Voluptas ducimus quidem maxime illo quo neque ullam debitis dolor magnam consectetur. Doloremque neque ab iste similique error, illum earum nisi assumenda! Quia autem odio dolor nihil.</p>
+                        <p class="bio-text">I grew up in Carmel Valley which is about 30 minutes from Carmel by the Sea, and lived in that area until I was 17.  Eager to find my way, I moved around a bit for school and work, trying out different career paths.  I lived in New York for a while which was awesome, it was my first time living in a big city and I loved the culture there.  I also lived in Florida for a while before ending up in the Bay Area.<br><br>
+
+                            When I started out I wasn’t sure what I wanted to do in life, so I went into Gemology on a recommendation from a close friend.  I enjoyed the field and had a great experience working for Tiffany & Co. in New York, but ultimately it wasn’t a good fit for me.  When I realized that, I decided to chase my dream of working with technology.  I moved back to California and started taking classes at the local community college.  I worked in restaurants while going to school to support myself, and ultimately got my BS in Computer Information Science.<br><br>
+                            
+                            After that I worked in IT support for a while and was able to put some of my skills to use, however it still wasn’t quite what I was looking for.  I have always been fascinated with building software and am very excited to finally be pursuing my dream of becoming a software engineer currently at GA.<br><br>
+                            
+                            In my personal life, I enjoy many activities from archery, surfing, and mountain biking, to gaming on my home built PC.  A personal goal of mine is to find a good D&D group and participate in an epic campaign.  Although I’ve dabbled in the past, I have never found the time or stayed in place long enough to find a committed group, and I love the idea of solving puzzles and facing challenges with a team in a creative setting while also making good friends.
+                            </p>
                     </div>
 
                 </div>
@@ -86,30 +102,40 @@
             <div class="projects-container">
                 <div class="project-block projects-left-block">
                     <div class="project">
-                        <img src="images/project-stub.png" alt="project image" class="project-image">
-                        <p class="project-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa reprehenderit molestiae ullam excepturi earum dolores, beatae velit illo quaerat incidunt eos, porro eveniet est vel deleniti hic. Facilis, quaerat dolores.</p>
+                        <a href="https://andrewretherford.github.io/duck-hunt/">
+                            <img src="images/duck-hunt.png" alt="project image" class="project-image">
+                        </a>
+                        <p class="project-text">An old classic.  This one was a class project and one of my first animated game attempts.  Not a huge deal but the nostalgia feels good =)</p>
                     </div>
 
                     <div class="project">
-                        <img src="images/project-stub.png" alt="project image" class="project-image">
-                        <p class="project-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa reprehenderit molestiae ullam excepturi earum dolores, beatae velit illo quaerat incidunt eos, porro eveniet est vel deleniti hic. Facilis, quaerat dolores.</p>
+                        <a href="https://andrewretherford.github.io/js-pixart-lite/">
+                            <img src="images/js-pixel-art.png" alt="project image" class="project-image">
+                        </a>
+                        <p class="project-text">Another class project, and my first dive into creating DOM elements with JS.  Needless to say this one was fun and exciting for a new developer just getting his feet wet!</p>
                     </div>
                 </div>
                 <div class="project-block projects-center-block">
                     <div class="project star-project">
-                        <img src="images/bio-stub.png" alt="project image" class="project-image">
-                        <p class="project-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa reprehenderit molestiae ullam excepturi earum dolores, beatae velit illo quaerat incidunt eos, porro eveniet est vel deleniti hic. Facilis, quaerat dolores.</p>
+                        <a href="https://andrewretherford.github.io/space-battle/">
+                            <img src="images/space-wars.png" alt="the opening screen of the Space Wars game" class="project-image">
+                        </a>
+                        <p class="project-text">An epic battle in space for the fate of humanity! Do you have what it takes to save the world?  Let's find out . . .</p>
                     </div>
                 </div>
                 <div class="project-block projects-right-block">
                     <div class="project">
-                        <img src="images/project-stub.png" alt="project image" class="project-image">
-                        <p class="project-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa reprehenderit molestiae ullam excepturi earum dolores, beatae velit illo quaerat incidunt eos, porro eveniet est vel deleniti hic. Facilis, quaerat dolores.</p>
+                        <a href="https://andrewretherford.github.io/tamagotchi/">
+                            <img src="images/tamagotchi.png" alt="project image" class="project-image">
+                        </a>
+                        <p class="project-text">In memory of a wasted youth.  Tamagotchi was an exercise in planning for a large project and was not something that we were meant to finish in the time given.  I just made it to MVP before the clock ran out, so I'm proudly posting this one.</p>
                     </div>
 
                     <div class="project">
-                        <img src="images/project-stub.png" alt="project image" class="project-image">
-                        <p class="project-text" id="last-project-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa reprehenderit molestiae ullam excepturi earum dolores, beatae velit illo quaerat incidunt eos, porro eveniet est vel deleniti hic. Facilis, quaerat dolores.</p>
+                        <a href="https://andrewretherford.github.io/tic-tac-toe/">
+                            <img src="images/tic-tac-toe.png" alt="project image" class="project-image">
+                        </a>
+                        <p class="project-text" id="last-project-text">A great lab exercise meant to prepare us for our first large project.  I had a lot of fun experimenting and laying out the basics of a two player game!</p>
                     </div>
                 </div>
             </div>
