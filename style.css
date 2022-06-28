@@ -35,11 +35,11 @@ html, body {
 }
 
 .inner-nav {
-    width: 30%;
+    width: 40%;
 }
 
 #center-nav {
-    width: 50%;
+    width: 60%;
     margin: 0 10vw;
 }
 
@@ -153,6 +153,7 @@ html, body {
 .resume-link {
     width: 100%;
     display: block;
+    margin-top: 2vh;
 }
 
 /* ---------- to home ---------- */
@@ -264,7 +265,6 @@ html, body {
         justify-content: space-evenly;
         align-items: center;
         margin: auto;
-
     }
     
     .center-menu {
@@ -315,9 +315,11 @@ html, body {
     .bio-resume-container {
         max-width: 100vh;
         display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
-    .bio-container {
+    .bio-container, .resume-container, #bio-back {
         width: 65vw;
         margin: 0px;
     }
@@ -326,10 +328,10 @@ html, body {
         max-width: 100%;
     }
 
-    .resume-container {
+    /* .resume-container {
         width: 30vw;
         margin: 0px;
-    }
+    } */
 
     .resume-block {
         width: 100%;
@@ -346,9 +348,10 @@ html, body {
         max-width: 1080px;
     }
 
-    .bio-container {
+    .bio-container, {
         max-width: 1025px;
     }
+    
 
 /* -------------------- PROJECT SHOWCASE -------------------- */
 
