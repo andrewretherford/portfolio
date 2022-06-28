@@ -31,11 +31,22 @@ I used a large project approach when building this site, following the normal st
 
  ### Wireframes
 
+Home page for mobile and tablet
  ![home page for mobile and tablet](./wireframes/1-home-page-mobile.png)
+
+Home page for desktop
  ![home page for desktop](./wireframes/1-home-page.png)
+
+Bio and resume for mobile and tablet
  ![bio/resume page for mobile and tablet](./wireframes/2-bio-resume-mobile.png)
+
+Bio and resume for desktop (I ended up discarding this layout as it seemed too busy)
  ![bio/resume page for desktop](./wireframes/2-bio-resume.png)
+
+Project showcase for mobile and tablet
  ![project showcase for mobile and tablet](./wireframes/3-project-showcase-mobile.png)
+
+Project showcase for desktop
  ![project showcase for desktop](./wireframes/3-project-showcase.png)
 
 
