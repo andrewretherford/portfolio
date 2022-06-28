@@ -59,7 +59,7 @@
 
 ## CSS
 
-- [ ] adjust all font sizes**bronze**
+- [ ] adjust all font sizes **bronze**
 - [x] implement media queries for standard break points **bronze**
 - [x] add style for .hide class **bronze**
 - [ ] choose a font **silver**
@@ -81,8 +81,8 @@
 - [ ] implement infinite scrolling menu **gold**
 
 ### bio/resume page
-- [ ] implement modal for resume link **silver**
-  - [ ] add ability to download resume from the modal **gold**
+- [x] implement modal for resume link **silver**
+  - [x] add ability to download resume from the modal **gold**
 
 ### project showcase
 - [ ] implement modal with live versions for projects **gold**

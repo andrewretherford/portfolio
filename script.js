@@ -9,8 +9,16 @@ function showHide(element) {
     element.classList.toggle('hide')
 }
 
-function popOut(element) {
-    element.classList.toggle('pop')
+function expandOrShrink(element) {
+    if(element.classList.contains('shrink')) {
+        element.classList.toggle('shrink')
+        element.classList.toggle('expand')
+    } else if(element.classList.contains('expand')) {
+        element.classList.toggle('expand')
+        element.classList.toggle('shrink')
+    } else {
+        element.classList.toggle('expand')
+    }
 }
 
 // DOM elements 
@@ -71,6 +79,81 @@ function homeMenuNavHandler(e) {
     }
 }
 
+function navExpandHandler(e) { console.log(e.target.tagName)
+    if(e.target.tagName != 'IMG') return;
+    
+    switch(e.target.id) {
+
+        case 'professional-links-nav':
+            showHide(professionalLinksNav)
+            showHide(professionalLinks)
+            let profChildren = professionalLinks.children
+            for(let i=0; i < profChildren.length; i++) {
+                setTimeout(expandOrShrink, 10, profChildren[i])
+            }
+            break
+
+        case 'sites-of-interest-nav':
+            showHide(sitesOfInterestNav)
+            showHide(sitesOfInterest)
+            let siteChildren = professionalLinks.children
+            for(let i=0; i < siteChildren.length; i++) {
+                setTimeout(expandOrShrink, 10, siteChildren[i])
+            }
+            break
+
+        default: return
+    }
+}
+
+function navShrinkHandler(e) { console.log(e.target.tagName)
+    if(e.target.tagName != 'DIV') return;
+
+    switch(e.target.id) {
+
+        case 'professional-links-div': 
+            setTimeout(showHide, 500, professionalLinksNav)
+            setTimeout(showHide, 500, professionalLinks)
+            let profChildren = professionalLinks.children
+            for(let i=0; i < profChildren.length; i++) {
+                expandOrShrink(profChildren[i])
+            }
+            break
+
+        case 'sites-of-interest-div':
+            setTimeout(showHide, 500, sitesOfInterestNav)
+            setTimeout(showHide, 500, sitesOfInterest)
+            let siteChildren = professionalLinks.children
+            for(let i=0; i < siteChildren.length; i++) {
+                expandOrShrink(siteChildren[i])
+            }
+            break
+
+        default: return
+    }
+}
+
+function resumeLinkHandler(e) {
+    showHide(resumeModal)
+}
+
+function windowClickHandler(e) {
+    if(e.target == resumeModal) {
+        showHide(resumeModal)
+    }
+
+    if(!homePageContainer.classList.contains('hide') && e.target.tagName != 'IMG') {
+        if(!professionalLinks.classList.contains('hide')) {
+            showHide(professionalLinks)
+            showHide(professionalLinksNav)
+        }
+        if(!sitesOfInterest.classList.contains('hide')) {
+            showHide(sitesOfInterest)
+            showHide(sitesOfInterestNav)
+        }
+    }
+}
+
 function toHomeHandler(e) {
     if(e.target.tagName != 'NAV') return;
 
@@ -90,64 +173,22 @@ function toHomeHandler(e) {
     }
 }
 
-function navHoverHandler(e) {
-    if(e.target.tagName != 'IMG') return;
-    switch(e.target.id) {
-
-        case 'favorite-things-nav':
-            // showHide(homePageContainer)
-            break
-
-        case 'bio-resume-nav':
-            showHide(homePageContainer)
-            showHide(bioPageContainer)
-            break
-
-        case 'project-showcase-nav':
-            showHide(homePageContainer)
-            showHide(projectPageContainer)
-            break
-        
-        case 'professional-links-nav':
-            showHide(professionalLinksNav)
-            showHide(professionalLinks)
-            break
-
-        case 'sites-of-interest-nav':
-            showHide(sitesOfInterestNav)
-            showHide(sitesOfInterest)
-            break
-
-        default: return
-    }
-}
-
 // event listeners 
 // ------------------------------------------------------------ //
 
-// nav listeners
+// home menu center navs
 homeMenuNavContainer.addEventListener('click', homeMenuNavHandler)
+
+// expanding navs
+professionalLinksNav.addEventListener('mouseenter', navExpandHandler)
+sitesOfInterestNav.addEventListener('mouseenter', navExpandHandler)
+professionalLinks.addEventListener('mouseleave', navShrinkHandler)
+sitesOfInterest.addEventListener('mouseleave', navShrinkHandler)
+
+// back buttons
 bioBack.addEventListener('click', toHomeHandler)
 projectBack.addEventListener('click', toHomeHandler)
 
-// modal listeners
-resumeLink.onclick = function() {
-    resumeModal.style.display = "block";
-}
-window.addEventListener('click', function(e) {
-    if(e.target == resumeModal) {
-        resumeModal.style.display = "none";
-    }
-
-    if(!homePageContainer.classList.contains('hide') && e.target.tagName != 'IMG') {
-        if(!professionalLinks.classList.contains('hide')) {
-            showHide(professionalLinks)
-            showHide(professionalLinksNav)
-        }
-        if(!sitesOfInterest.classList.contains('hide')) {
-            showHide(sitesOfInterest)
-            showHide(sitesOfInterestNav)
-        }
-    }
-
-})
+// interaction listeners
+resumeLink.addEventListener('click', resumeLinkHandler)
+window.addEventListener('click', windowClickHandler)

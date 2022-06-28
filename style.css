@@ -1,5 +1,5 @@
 * {
-    /* background-color: rgb(0, 100, 0, 0.2); */
+    background-color: rgb(0, 100, 0, 0.2);
   }
 
 html, body {
@@ -61,6 +61,24 @@ html, body {
     display: block;
 }
 
+.professional-links, .sites-of-interest {
+    height: 8vh;
+    width: 24vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.professional-links>a, .sites-of-interest>a {
+    color: rgb(50, 50, 50, 1);
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin: 0px;
+    transition: margin 1s;
+}
+
 /* -------------------- BIO/RESUME PAGE -------------------- */
 
 .bio-page-container {
@@ -70,7 +88,7 @@ html, body {
 
 /* resume modal */
 .modal {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -213,6 +231,16 @@ html, body {
 
 .grow:hover {
     transform: scale(1.2);
+}
+
+/* expand or shrink elements */
+
+.expand {
+    margin: 1rem 0px !important;
+}
+
+.shrink {
+    margin: 0px !important;
 }
 
 /* hide elements with .hide class */
