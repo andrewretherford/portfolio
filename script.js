@@ -82,14 +82,17 @@ function homeMenuNavHandler(e) {
 function navExpandHandler(e) {
     if(e.target.tagName != 'IMG') return;
     
+    let profExpandTimeout, siteExpandTimeout
+
     switch(e.target.id) {
 
         case 'professional-links-nav':
             showHide(professionalLinksNav)
             showHide(professionalLinks)
             let profChildren = professionalLinks.children
+            clearTimeout(profExpandTimeout)
             for(let i=0; i < profChildren.length; i++) {
-                setTimeout(expandOrShrink, 10, profChildren[i])
+                profExpandTimeout = setTimeout(expandOrShrink, 10, profChildren[i])
             }
             break
 
@@ -97,8 +100,9 @@ function navExpandHandler(e) {
             showHide(sitesOfInterestNav)
             showHide(sitesOfInterest)
             let siteChildren = sitesOfInterest.children
+            clearTimeout(siteExpandTimeout)
             for(let i=0; i < siteChildren.length; i++) {
-                setTimeout(expandOrShrink, 10, siteChildren[i])
+                siteExpandTimeout = setTimeout(expandOrShrink, 10, siteChildren[i])
             }
             break
 
@@ -109,10 +113,14 @@ function navExpandHandler(e) {
 function navShrinkHandler(e) {
     if(e.target.tagName != 'DIV') return;
 
+    let profNavTimeout, profLinksTimeout, siteNavTimeout, siteTimeout
+
     switch(e.target.id) {
 
         case 'professional-links-div': 
-            profLinksTimeoutNav = setTimeout(showHide, 500, professionalLinksNav)
+            clearTimeout(profNavTimeout)
+            clearTimeout(profLinksTimeout)
+            profNavTimeout = setTimeout(showHide, 500, professionalLinksNav)
             profLinksTimeout = setTimeout(showHide, 500, professionalLinks)
             let profChildren = professionalLinks.children
             for(let i=0; i < profChildren.length; i++) {
@@ -121,6 +129,8 @@ function navShrinkHandler(e) {
             break
 
         case 'sites-of-interest-div':
+            clearTimeout(siteNavTimeout)
+            clearTimeout(siteTimeout)
             siteNavTimeout = setTimeout(showHide, 500, sitesOfInterestNav)
             siteTimeout = setTimeout(showHide, 500, sitesOfInterest)
             let siteChildren = sitesOfInterest.children
