@@ -53,36 +53,36 @@
 
 # Stretch
 
-- figure out how to host working projects and link to them **gold**
+- [ ]figure out how to host working projects and link to them **gold**
 
 ## HTML
 
 ## CSS
 
-- adjust all font sizes**bronze**
-- implement media queries for standard break points **bronze**
-- add style for .hide class **bronze**
-- choose a font **silver**
-- source images and backgrounds **silver**
-- add style for .grow class **silver**
+- [ ]adjust all font sizes**bronze**
+- [x]implement media queries for standard break points **bronze**
+- [x]add style for .hide class **bronze**
+- [ ]choose a font **silver**
+- [ ]source images and backgrounds **silver**
+- [x]add style for .grow class **silver**
 
 ### home page
-  - add style for .expand class **silver**
+  - [ ]add style for .expand class **silver**
 
 ### bio/resume page
-- research special characters and include in the back to home nav
+~~- research special characters and include in the back to home nav~~
 
 ### project showcase
-- research special characters and include in the back to home nav
+~~- research special characters and include in the back to home nav~~
 
 ## JS
 
 ### home page
-- implement infinite scrolling menu **gold**
+- [ ]implement infinite scrolling menu **gold**
 
 ### bio/resume page
-- implement modal for resume link **silver**
-  - add ability to download resume from the modal **gold**
+- [ ]implement modal for resume link **silver**
+  - [ ]add ability to download resume from the modal **gold**
 
 ### project showcase
-- implement modal with live versions for projects **gold**
+- [ ]implement modal with live versions for projects **gold**
