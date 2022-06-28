@@ -19,23 +19,30 @@
             <!-- navigation bar -->
             <nav class="home-menu-nav-container">
                 <nav class="center-menu">
-                    <nav class="inner-nav" id="center-nav">
+                    <nav class="inner-nav grow" id="center-nav">
                         <img src="images/portfolio-stub.png" alt="portfolio image" id="favorite-things-nav">
                     </nav>
-                    <nav class="inner-nav" id="bio-resume-container">
+                    <nav class="inner-nav grow" id="bio-resume-container">
                         <img src="images/portfolio-stub.png" alt="portfolio image" id="bio-resume-nav">
                     </nav>
-                    <nav class="inner-nav" id="project-showcase-container">
+                    <nav class="inner-nav grow" id="project-showcase-container">
                         <img src="images/portfolio-stub.png" alt="portfolio image" id="project-showcase-nav">
                     </nav>
                 </nav>
 
-                <nav class="outer-nav expand" id="professional-links-container">
-                    <img src="images/portfolio-stub.png" alt="portfolio image" id="professional-links">
+                <nav class="outer-nav grow expand" id="professional-links-container">
+                    <div class="professional-links hide">
+                        <a href="https://github.com/andrewretherford" class="git-hub">GitHub</a>
+                        <a href="https://www.linkedin.com/in/andrew-retherford" class="linked-in">LinkedIn</a>
+                    </div>
+                    <img src="images/portfolio-stub.png" alt="portfolio image" id="professional-links-nav">
                 </nav>
                 
-                <nav class="outer-nav expand" id="sites-of-interest-container">
-                    <img src="images/portfolio-stub.png" alt="portfolio image" id="sites-of-interest">
+                <nav class="outer-nav grow expand" id="sites-of-interest-container">
+                    <div class="sites-of-interest hide">
+                        <a href="http://"></a>
+                    </div>
+                    <img src="images/portfolio-stub.png" alt="portfolio image" id="sites-of-interest-nav">
                 </nav>  
             </nav>
         </div>
@@ -44,7 +51,15 @@
 
         <!-- bio/resume page container -->
         <div class="bio-page-container hide">
-            
+            <!-- resume modal -->
+            <div class="modal" id="resume-modal">
+                <div class="resume-content">
+                    <!-- <span class="close">&times;</span> -->
+                    <iframe src="/assets/Resume.pdf" frameborder="0"></iframe>
+                </div>
+            </div>
+
+            <!-- bio and resume -->
             <div class="bio-resume-container">
                 <!-- bio -->
                 <div class="bio-container">
