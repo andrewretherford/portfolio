@@ -7,7 +7,7 @@ html, body {
     padding: 0px;
     overflow-x: hidden;
     background-color: lightgray;
-    background-image: url("/images/home-background.png");
+    background-image: url("../images/home-background.png");
     background-size: cover;
 }
 
