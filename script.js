@@ -1,12 +1,43 @@
-// state variables
+// DOM Elements
 // ------------------------------------------------------------ //
 
+// Page Containers
+const homePageContainer = document.querySelector('.home-page-container')
+const bioPageContainer = document.querySelector('.bio-page-container')
+const projectPageContainer = document.querySelector('.project-page-container')
 
-// functions
+// Nav Elements
+const bioResumeNav = document.querySelector('#bio-resume-nav')
+const projectShowcaseNav = document.querySelector('project-showcase-nav')
+const bioBack = document.querySelector('#bio-back')
+const projectBack = document.querySelector('#project-back')
+const homeMenuNavContainer = document.querySelector('.home-menu-nav-container')
+const professionalLinksNav = document.querySelector('#professional-links-nav')
+const sitesOfInterestNav = document.querySelector('#sites-of-interest-nav')
+const professionalLinks = document.querySelector('.professional-links')
+const sitesOfInterest = document.querySelector('.sites-of-interest')
+const navbar = document.querySelector('.navbar')
+
+// Modal
+const resumeModal = document.querySelector('#resume-modal')
+const resumeLink = document.querySelector('#resume-link')
+
+// Global Variables
+// ------------------------------------------------------------ //
+
+let currentPage = homePageContainer
+
+// Utility Functions
 // ------------------------------------------------------------ //
 
 function showHide(element) {
     element.classList.toggle('hide')
+}
+
+function navigate(destination, origin) {
+    !origin.classList.contains('hide') && origin.classList.add('hide')
+    destination.classList.contains('hide') && destination.classList.remove('hide')
+    currentPage = destination
 }
 
 function expandOrShrink(element) {
@@ -21,59 +52,26 @@ function expandOrShrink(element) {
     }
 }
 
-// DOM elements 
+// Event Handlers
 // ------------------------------------------------------------ //
 
-// page containers
-const homePageContainer = document.querySelector('.home-page-container')
-const bioPageContainer = document.querySelector('.bio-page-container')
-const projectPageContainer = document.querySelector('.project-page-container')
-
-// nav elements
-const bioResumeNav = document.querySelector('#bio-resume-nav')
-const projectShowcaseNav = document.querySelector('project-showcase-nav')
-const bioBack = document.querySelector('#bio-back')
-const projectBack = document.querySelector('#project-back')
-const homeMenuNavContainer = document.querySelector('.home-menu-nav-container')
-const professionalLinksNav = document.querySelector('#professional-links-nav')
-const sitesOfInterestNav = document.querySelector('#sites-of-interest-nav')
-const professionalLinks = document.querySelector('.professional-links')
-const sitesOfInterest = document.querySelector('.sites-of-interest')
-
-// modal
-const resumeModal = document.querySelector('#resume-modal')
-const resumeLink = document.querySelector('.resume-link')
-
-// event handlers
-// ------------------------------------------------------------ //
-
-function homeMenuNavHandler(e) {
-    if(e.target.tagName != 'IMG') return;
+function navHandler(e) {
+    if(e.target.tagName !== 'SPAN') return
+    const currentMenuItem = document.querySelector('.current-menu-item')
+    currentMenuItem.classList.remove('current-menu-item')
+    e.target.classList.add('current-menu-item')
     switch(e.target.id) {
-
-        case 'favorite-things-nav':
-            // showHide(homePageContainer)
+        case 'home-nav':
+            navigate(homePageContainer, currentPage)
             break
 
-        case 'bio-resume-nav':
-            showHide(homePageContainer)
-            showHide(bioPageContainer)
+        case 'bio-nav':
+            navigate(bioPageContainer, currentPage)
             break
 
-        case 'project-showcase-nav':
-            showHide(homePageContainer)
-            showHide(projectPageContainer)
+        case 'projects-nav':
+            navigate(projectPageContainer, currentPage)
             break
-        
-        // case 'professional-links-nav':
-        //     showHide(professionalLinksNav)
-        //     showHide(professionalLinks)
-        //     break
-
-        // case 'sites-of-interest-nav':
-        //     showHide(sitesOfInterestNav)
-        //     showHide(sitesOfInterest)
-        //     break
 
         default: return
     }
@@ -187,13 +185,14 @@ function toHomeHandler(e) {
 // ------------------------------------------------------------ //
 
 // home menu center navs
-homeMenuNavContainer.addEventListener('click', homeMenuNavHandler)
+// homeMenuNavContainer.addEventListener('click', homeMenuNavHandler)
+navbar.addEventListener('click', navHandler)
 
 // expanding navs
-professionalLinksNav.addEventListener('mouseenter', navExpandHandler)
-sitesOfInterestNav.addEventListener('mouseenter', navExpandHandler)
-professionalLinks.addEventListener('mouseleave', navShrinkHandler)
-sitesOfInterest.addEventListener('mouseleave', navShrinkHandler)
+// professionalLinksNav.addEventListener('mouseenter', navExpandHandler)
+// sitesOfInterestNav.addEventListener('mouseenter', navExpandHandler)
+// professionalLinks.addEventListener('mouseleave', navShrinkHandler)
+// sitesOfInterest.addEventListener('mouseleave', navShrinkHandler)
 
 // back buttons
 bioBack.addEventListener('click', toHomeHandler)
