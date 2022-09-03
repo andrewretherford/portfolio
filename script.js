@@ -143,6 +143,7 @@ function navShrinkHandler(e) {
 
 function resumeLinkHandler(e) {
     showHide(resumeModal)
+    console.log('clicked')
 }
 
 function windowClickHandler(e) {
@@ -195,8 +196,8 @@ navbar.addEventListener('click', navHandler)
 // sitesOfInterest.addEventListener('mouseleave', navShrinkHandler)
 
 // back buttons
-bioBack.addEventListener('click', toHomeHandler)
-projectBack.addEventListener('click', toHomeHandler)
+// bioBack.addEventListener('click', toHomeHandler)
+// projectBack.addEventListener('click', toHomeHandler)
 
 // interaction listeners
 resumeLink.addEventListener('click', resumeLinkHandler)

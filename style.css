@@ -13,25 +13,29 @@ body {
     padding: 0px;
     height: 100vh;
     width: 100vw;
-    display: flex;
-    flex-direction: column;
 }
 
 .page-container {
-    background-image: url("./images/home-background.png");
-    background-size: cover;
+    background: url("./images/home-background.png") no-repeat center center/cover;
     margin: auto;
     height: 100%;
     width: 100%;
     max-width: 1920px;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     flex-grow: 1;
+    /* min-height: 91.5%; */
     width: 100%;
 }
 
-/* --------------------- NAVBAR --------------------- */
+.home-page-container, .bio-page-container, .project-page-container {
+    transition: opacity 1s ease;
+}
+
+/* ================================= NAVBAR ================================ */
 
 .navbar {
     height: 6em;
@@ -43,7 +47,7 @@ main {
 }
 
 .navbar > span, #resume-link {
-    transition: color .3s;
+    transition: all .2s linear;
     text-underline-offset: .5em;
     text-decoration-color: #aaa;
     cursor: pointer;
@@ -57,7 +61,7 @@ main {
     text-decoration: underline;
 }
 
-/* -------------------- HOME PAGE -------------------- */
+/* =============================== HOME PAGE =============================== */
 
 .home-page-container {
     height: 100%;
@@ -128,7 +132,7 @@ main {
     transition: margin .5s;
 }
 
-/* -------------------- BIO/RESUME PAGE -------------------- */
+/* ================================ BIO PAGE =============================== */
 
 .bio-page-container {
     height: 100%;
@@ -136,6 +140,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* transform: translate(1920px); */
 }
 
 /* resume modal */
@@ -154,11 +159,12 @@ main {
 
 .resume-content {
     background-color: rgb(125, 125, 125, 1);
-    margin: 10% auto;
-    padding: 20px;
+    margin: 5em auto;
+    /* padding: 10px; */
     border: 1px solid #888;
-    width: 80;
-    height: 80%;
+    width: 80%;
+    height: 1000px;
+    max-width: 800px;
 }
 
 .resume-content>iframe {
@@ -173,15 +179,6 @@ main {
     font-weight: bold;
 }
 
-/* ---------- bio ---------- */
-/* .bio-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-} */
-
 #resume-link {
     margin-top: 5em;
 }
@@ -195,52 +192,36 @@ main {
     justify-content: center;
 }
 
-/* .bio-photo-container {
-    width: 100%;
-    margin-bottom: 2vh;
-}
-
-.bio-photo {
-    width: 100%;
-    max-height: 30vh;
-    display: block;
-} */
-
-.bio-text {
-    margin: 8px 10px;
-}
-
-/* ---------- resume ---------- */
-.resume-container {
-    margin: 2vh 0vh;
-    width: 100vw;
-}
-
-/* ---------- to home ---------- */
-#bio-back {
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    color: gold;
-    background-color: rgb(55, 55, 55, 1);
-}
-
-/* -------------------- PROJECT SHOWCASE -------------------- */
+/* ============================ PROJECT SHOWCASE =========================== */
 
 .project-page-container {
     height: 100%;
     width: 100%;
-    /* background-color: rgb(125, 125, 125, 1); */
+    display: grid;
+    place-items: center;
 }
 
-.projects-container {
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding-top: 3vh;
+.carousel-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.carousel-container > * > img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-container div > img {
+    box-shadow: 0 4px 8px 0;
+}
+
+.carousel-container .main {
+
+}
+
+.carousel-container .side {
+    transform: scale(.7);
 }
 
 .project-block {
@@ -306,13 +287,18 @@ main {
     margin: 0px !important;
 }
 
-/* hide elements with .hide class */
-.hide {
-    display: none !important;
+/* ================================== HIDE ================================= */
+.hide, .hide > *, .hide > * > * {
+    display: block;
+    height: 0;
+    line-height: 0;
+    overflow: hidden;
+    opacity: 0;
 }
 
-/* -------------------- MEDIA QUERIES -------------------- */
-/* ------------------------------------------------------- */
+/* ========================================================================= */
+/* ----------------------------- MEDIA QUERIES ----------------------------- */
+/* ========================================================================= */
 
 @media screen and (min-width: 800px) { /* --- Small Screens & Laptops --- */
     
@@ -372,6 +358,7 @@ main {
     .bio-page-container {
         width: 100vw;
         margin: auto;
+        /* transform: translate(1920px); */
     }
 
     .bio-resume-container {
@@ -415,7 +402,7 @@ main {
 /* -------------------- PROJECT SHOWCASE -------------------- */
 
     .projects-container {
-        height: 90vh;
+        height: 100;
         flex-direction: row;
     }
 
