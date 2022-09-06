@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
 
 * {
-    background-color: rgb(0, 100, 0, 0.2);
+    /* background-color: rgb(0, 100, 0, 0.2); */
 }
 
 :root {
@@ -191,16 +191,20 @@ main {
 /* ======================================= ARROWS ====================================== */
 
 .arrow-container {
-    width: 95%;
-    max-width: 1130px;
     margin: auto;
     display: flex;
     justify-content: space-between;
 }
 
+.project-arrows {
+    width: 90%;
+    max-width: 1080px;
+}
+
 
 .modal-arrows {
     position: absolute;
+    width: 95%;
     max-width: 1000px;
 }
 
@@ -361,11 +365,15 @@ main {
 }
 
 .modal-content {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
     background-color: var(--pageBackground);
     margin: 12em auto;
     border: solid var(--hover) 2PX;
-    height: 53%;
+    height: 70vw;
     width: 90%;
+    max-height: 845px;
     max-width: 1080px;
 }
 
@@ -373,35 +381,41 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 540px;
-    margin-top: 1em;
-}
-
-.modal-content hr {
-    margin-top: 1em;
-}
-
-.images {
-    height: 540px;
+    height: 90%;
     width: 100%;
-    max-width: 960px;
     position: relative;
 }
 
-.images img {
-    height: 540px;
+.modal-content hr {
+    margin: 3% 0 3% 0;
+}
+
+.images {
+    position: relative;
+    height: 100%;
     width: 100%;
-    max-width: 960px;
+    max-width: 1800px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.images img {
+    height: auto;
+    width: 90%;
+    top: 6%;
+    left: 5%;
+    /* max-width: 960px; */
     position: absolute;
-    transition: all 0.5s;
+    /* transition: all 0.5s; */
     object-fit: cover;
 }
 
 .modal-navs {
     display: grid;
-    gap: 300px;
+    gap: 30%;
     max-height: 20px;
     width: 500px;
+    margin-bottom: 3%;
 }
 
 .modal-navs a {
