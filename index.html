@@ -19,7 +19,9 @@
         </header>
     
         <main>
-            <!-------------------- HOME PAGE -------------------->
+            <!--========================================================================-->
+            <!--================================= HOME =================================-->
+            <!--========================================================================-->
     
             <!-- home page container -->
             <div class="home-page-container hide">
@@ -56,7 +58,9 @@
                 </nav> -->
             </div>
     
-            <!-------------------- BIO/RESUME -------------------->
+            <!--========================================================================-->
+            <!--=============================== ABOUT ME ===============================-->
+            <!--========================================================================-->
     
             <!-- bio/resume page container -->
             <div class="bio-page-container hide">
@@ -82,15 +86,60 @@
 
             </div>
     
-            <!-------------------- PROJECT SHOWCASE -------------------->
+            <!--========================================================================-->
+            <!--=========================== PROJECT SHOWCASE ===========================-->
+            <!--========================================================================-->
     
-            <!-- project page container -->
             <div class="project-page-container">
+
+                <!--============================== MODALS ==============================-->
+                <div class="modal hide" id="slide1-modal">
+                    <div class="modal-content">
+                        <div>
+                            <div class="images">
+                                <img src="./images/projects/space_wars/attack.png" alt="screen with attack prompt">
+                                <img src="./images/projects/space_wars/fight_or_retreat.png" alt="choose to continue on or return to base for repairs">
+                                <img src="./images/projects/space_wars/ships.png" alt="class declarations for ships">
+                                <img src="./images/projects/space_wars/attack_handler.png" alt="code for handling the attack function">
+                            </div>
+                            <div class="arrow-container modal-arrows">
+                                <i class="arrow" id="modal-left"></i>
+                                <i class="arrow" id="modal-right"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="navbar modal-navs">
+                            <a class='modal-link' href="https://andrewretherford.github.io/space-battle/">Live Demo</a>
+                            <a class='modal-link' href="https://github.com/andrewretherford/space-battle">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal hide" id="slide2-modal">
+                    <div class="modal-content">
+
+                    </div>
+                </div>
+                <div class="modal hide" id="slide3-modal">
+                    <div class="modal-content">
+
+                    </div>
+                </div>
+                <div class="modal hide" id="slide4-modal">
+                    <div class="modal-content">
+
+                    </div>
+                </div>
+
+
+                <!--============================= CAROUSEL =============================-->
+                
+                <!----------------- buttons ----------------->
                 <div class="arrow-container">
                     <i class="arrow" id="left"></i>
                     <i class="arrow" id="right"></i>
                 </div>
-                <!-------------- carousel -------------->
+                
+                <!------------------ slides ----------------->
                 <div class="carousel-container">
                     <div class="slide-container">
                         <div class="card side" id="slide1">
@@ -103,7 +152,7 @@
                                 </div>
                             </div>
                             <div class="card-box picture">
-                                <img src="images/space-wars.png" alt="">
+                                <img src="images/projects/space_wars/space-wars.png" alt="">
                             </div>
                             <div class="info-bar card-type">
                                 <span>Turn Based - Browser Game</span>
@@ -126,7 +175,7 @@
                                 </div>
                             </div>
                             <div class="card-box picture">
-                                <img src="images/space-wars.png" alt="">
+                                <img src="images/projects/space_wars/space-wars.png" alt="">
                             </div>
                             <div class="info-bar card-type">
                                 <span>Turn Based - Browser Game</span>
@@ -139,11 +188,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card side" id="slide3"><img src="images/space-wars.png" alt=""></div>
+                        <div class="card side" id="slide3"><img src="images/projects/space_wars/space-wars.png" alt=""></div>
                         <div class="card side" id="slide4"><img src="images/js-pixel-art.png" alt=""></div>
-                        <!-- <div class="side test"><img src="images/js-pixel-art.png" alt=""></div>
-                        <div class="side"><img src="images/duck-hunt.png" alt=""></div>
-                        <div class="side"><img src="images/js-pixel-art.png" alt=""></div> -->
                     </div>
                     <!-- <div class="project-block projects-left-block">
                         <div class="project">
@@ -183,10 +229,7 @@
                             <p class="project-text" id="last-project-text">A great lab exercise meant to prepare us for our first large project.  I had a lot of fun experimenting and laying out the basics of a two player game!</p>
                         </div>
                     </div> -->
-                </div>
-                <!-- back to home -->
-                <!-- <nav class="to-home" id="project-back">back</nav> -->
-    
+                </div>   
             </div>
     
         </main>

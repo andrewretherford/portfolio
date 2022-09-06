@@ -38,7 +38,9 @@ main {
     transition: opacity 1s ease;
 }
 
-/* ================================= NAVBAR ================================ */
+/* ===================================================================================== */
+/* ======================================= NAVBAR ====================================== */
+/* ===================================================================================== */
 
 .navbar {
     height: 6em;
@@ -49,14 +51,15 @@ main {
     align-items: center;
 }
 
-.navbar > span, #resume-link {
-    transition: all .2s;
+.navbar > span, #resume-link, .modal-link {
+    color: black;
     text-underline-offset: .5em;
     text-decoration-color: #aaa;
     cursor: pointer;
+    transition: all .2s;
 }
 
-.navbar > span:hover, #resume-link:hover {
+.navbar > span:hover, #resume-link:hover, .modal-link:hover {
     color: var(--hover);
 }
 
@@ -64,7 +67,9 @@ main {
     text-decoration: underline;
 }
 
-/* =============================== HOME PAGE =============================== */
+/* ===================================================================================== */
+/* ====================================== HOME PAGE ==================================== */
+/* ===================================================================================== */
 
 .home-page-container {
     height: 100%;
@@ -135,7 +140,9 @@ main {
     transition: margin .5s;
 }
 
-/* ================================ BIO PAGE =============================== */
+/* ===================================================================================== */
+/* ====================================== ABOUT ME ===================================== */
+/* ===================================================================================== */
 
 .bio-page-container {
     height: 100%;
@@ -143,31 +150,6 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* transform: translate(1920px); */
-}
-
-/* resume modal */
-.modal {
-    display: block;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: black;
-    background-color: rgb(0,0,0,.4);
-}
-
-.resume-content {
-    background-color: rgb(125, 125, 125, 1);
-    margin: 5em auto;
-    /* padding: 10px; */
-    border: 1px solid #888;
-    width: 80%;
-    height: 1000px;
-    max-width: 800px;
 }
 
 .resume-content>iframe {
@@ -195,7 +177,9 @@ main {
     justify-content: center;
 }
 
-/* ============================ PROJECT SHOWCASE =========================== */
+/* ===================================================================================== */
+/* ====================================== PROJECTS ===================================== */
+/* ===================================================================================== */
 
 .project-page-container {
     height: 100%;
@@ -204,8 +188,74 @@ main {
     place-items: center;
 }
 
+/* ======================================= MODALS ====================================== */
+
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    background-color: rgb(0,0,0,.4);
+}
+
+.modal-content {
+    background-color: var(--pageBackground);
+    margin: 12em auto;
+    border: solid var(--hover) 2PX;
+    height: 53%;
+    width: 90%;
+    max-width: 1080px;
+}
+
+.modal-content > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 540px;
+    margin-top: 1em;
+}
+
+.modal-content hr {
+    margin-top: 1em;
+}
+
+.images {
+    height: 540px;
+    width: 100%;
+    max-width: 960px;
+    position: relative;
+}
+
+.images img {
+    height: 540px;
+    width: 100%;
+    max-width: 960px;
+    position: absolute;
+    transition: all 0.5s;
+    object-fit: cover;
+}
+
+.modal-navs {
+    display: grid;
+    gap: 300px;
+    max-height: 20px;
+    width: 500px;
+}
+
+.modal-navs a {
+    text-decoration: none;
+    font-size: large;
+}
+
+/* ====================================== CAROUSEL ===================================== */
+
 .carousel-container {
-    height: 50%;
+    height: 585px;
     width: 1100px;
     display: flex;
     align-items: center;
@@ -221,7 +271,11 @@ main {
     transition: all 1s;
 }
 
-/* ------------------------------ PROJECT CARD ----------------------------- */
+.slide-container .side {
+    transform: scale(.7) translate(21px);
+}
+
+/* ==================================== PROJECT CARD =================================== */
 
 .card {
     background: url('./images/card-background.png') no-repeat center center/cover;
@@ -229,7 +283,6 @@ main {
     flex-direction: column;
     width: 350px;
     height: 90%;
-    margin-top: 2em;
     border-radius: 10px;
     border: solid black 10px;
     font-family: 'Crimson Text', serif;
@@ -285,10 +338,6 @@ main {
     margin: 0 auto;
 }
 
-/* .card-type {
-    
-} */
-
 .card-text {
     display: grid;
     place-items: center;
@@ -314,18 +363,7 @@ main {
     font-style: italic;
 }
 
-/* .slide-container  div  img {
-    object-fit: cover center;
-    box-shadow: 0 4px 8px 0;
-    height: 100%;
-    width: 130%;
-} */
-
-.slide-container .side {
-    transform: scale(.7) translate(21px);
-}
-
-/* -------------------------------- BUTTONS -------------------------------- */
+/* ====================================== BUTTONS ====================================== */
 
 .arrow-container {
     width: 95%;
@@ -335,13 +373,19 @@ main {
     justify-content: space-between;
 }
 
+
+.modal-arrows {
+    position: absolute;
+    max-width: 1000px;
+}
+
 .arrow {
     border-bottom: 2px solid black;
     border-right: 2px solid black;
     display: inline-block;
-    padding: 5px;
+    padding: 6px;
     cursor: pointer;
-    z-index: 2;
+    z-index: 1;
     transition: all .1s;
 }
 
@@ -349,19 +393,19 @@ main {
     border-color: var(--hover);
 }
 
-#left {
+#left, #modal-left{
     transform: rotate(135deg) scale(1.5);
 }
 
-#left:hover {
+#left:hover, #modal-left:hover {
     transform: rotate(135deg) scale(2);
 }
 
-#right {
+#right, #modal-right {
     transform: rotate(-45deg) scale(1.5);
 }
 
-#right:hover {
+#right:hover, #modal-right:hover {
     transform: rotate(-45deg) scale(2);
 }
 
@@ -428,7 +472,7 @@ main {
     margin: 0px !important;
 }
 
-/* ================================== HIDE ================================= */
+/* ======================================== HIDE ======================================= */
 .hide, .hide > *, .hide > * > * {
     display: block;
     height: 0;
