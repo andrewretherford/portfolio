@@ -21,14 +21,12 @@ const navbar = document.querySelector('.navbar')
 // Carousel
 const slideContainer = document.querySelector('.slide-container')
 const arrowContainer = document.querySelector('.arrow-container')
-const slide1 = document.querySelector('#slide1')
-const slide2 = document.querySelector('#slide2')
-const slide3 = document.querySelector('#slide3')
-const slide4 = document.querySelector('#slide4')
+const slides = document.querySelectorAll('.card')
 
 // Modal
-const resumeModal = document.querySelector('#resume-modal')
-const resumeLink = document.querySelector('#resume-link')
+const modals = document.querySelectorAll('.modal')
+// const resumeModal = document.querySelector('#resume-modal')
+// const resumeLink = document.querySelector('#resume-link')
 
 // Global Variables
 // ------------------------------------------------------------ //
@@ -41,6 +39,10 @@ let currentSlide = 1
 
 function showHide(element) {
     element.classList.toggle('hide')
+}
+
+function toggle(element) {
+    element.classList.toggle('vanish')
 }
 
 function navigate(destination, origin) {
@@ -60,36 +62,36 @@ function setMainSlide(currentSlide, direction) {
     switch(currentSlide) {
         case 0:
             console.log('case 0')
-            toggleSlide(slide2)
-            toggleSlide(slide1)
+            toggleSlide(slides[1])
+            toggleSlide(slides[0])
             break
 
         case 1:
             console.log('case 1')
             if(direction == 'left') {
-                toggleSlide(slide3)
-                toggleSlide(slide2)
+                toggleSlide(slides[2])
+                toggleSlide(slides[1])
             } else {
-                toggleSlide(slide1)
-                toggleSlide(slide2)
+                toggleSlide(slides[0])
+                toggleSlide(slides[1])
             }
             break
 
         case 2:
             console.log('case 2')
             if(direction == 'left') {
-                toggleSlide(slide4)
-                toggleSlide(slide3)
+                toggleSlide(slides[3])
+                toggleSlide(slides[2])
             } else {
-                toggleSlide(slide2)
-                toggleSlide(slide3)
+                toggleSlide(slides[1])
+                toggleSlide(slides[2])
             }
             break
 
         case 3:
             console.log('case 3')
-            toggleSlide(slide3)
-            toggleSlide(slide4)
+            toggleSlide(slides[2])
+            toggleSlide(slides[3])
             break
 
         default:
@@ -135,6 +137,7 @@ function navHandler(e) {
 }
 
 function carouselHandler(e) {
+    console.log(e.target.id)
     switch(e.target.id) {
         case 'left':
             if(currentSlide > 0) {
@@ -154,7 +157,7 @@ function carouselHandler(e) {
             break
     }
 
-    const translateChange = (currentSlide) * -385 + 310
+    const translateChange = (currentSlide) * -370 + 365
     slideContainer.style.transform = `translate(${translateChange}px)`
 }
 
@@ -222,46 +225,56 @@ function carouselHandler(e) {
 //     }
 // }
 
-function resumeLinkHandler(e) {
-    showHide(resumeModal)
-    console.log('clicked')
-}
-
-function windowClickHandler(e) {
-    if(e.target == resumeModal) {
-        showHide(resumeModal)
-    }
-
-    // if(!homePageContainer.classList.contains('hide') && e.target.tagName != 'IMG') {
-    //     if(!professionalLinks.classList.contains('hide')) {
-    //         showHide(professionalLinks)
-    //         showHide(professionalLinksNav)
-    //     }
-    //     if(!sitesOfInterest.classList.contains('hide')) {
-    //         showHide(sitesOfInterest)
-    //         showHide(sitesOfInterestNav)
-    //     }
-    // }
-}
-
-function toHomeHandler(e) {
-    if(e.target.tagName != 'NAV') return;
-
-    switch(e.target.id) {
-
-        case 'bio-back':
-            showHide(bioPageContainer)
-            showHide(homePageContainer)
-            break
-
-        case 'project-back':
-            showHide(projectPageContainer)
-            showHide(homePageContainer)
-            break
-
-        default: return
+function modalShowHandler(e) {
+    if(e.currentTarget.classList.contains('card')) {
+        switch(e.currentTarget.id) {
+            case 'slide1':
+                showHide(modals[0])
+                break
+            
+            case 'slide2':
+                showHide(modals[1])
+                break
+            
+            case 'slide3':
+                showHide(modals[2])
+                break
+            
+            case 'slide4':
+                showHide(modals[3])
+                break
+            
+            default:
+                break
+        }
     }
 }
+
+function modalHideHandler(e) {
+    console.log('modalHideHandler')
+    if(e.target.classList.contains('modal')) {
+        showHide(e.target)
+    }
+}
+
+// function toHomeHandler(e) {
+//     if(e.target.tagName != 'NAV') return;
+
+//     switch(e.target.id) {
+
+//         case 'bio-back':
+//             showHide(bioPageContainer)
+//             showHide(homePageContainer)
+//             break
+
+//         case 'project-back':
+//             showHide(projectPageContainer)
+//             showHide(homePageContainer)
+//             break
+
+//         default: return
+//     }
+// }
 
 // event listeners 
 // ------------------------------------------------------------ //
@@ -271,6 +284,9 @@ function toHomeHandler(e) {
 navbar.addEventListener('click', navHandler)
 
 arrowContainer.addEventListener('click', carouselHandler)
+// slideContainer.addEventListener('click', modalShowHandler)
+slides.forEach(slide => slide.addEventListener('click', modalShowHandler))
+modals.forEach(modal => modal.addEventListener('click', modalHideHandler))
 
 // expanding navs
 // professionalLinksNav.addEventListener('mouseenter', navExpandHandler)
@@ -283,5 +299,3 @@ arrowContainer.addEventListener('click', carouselHandler)
 // projectBack.addEventListener('click', toHomeHandler)
 
 // interaction listeners
-resumeLink.addEventListener('click', resumeLinkHandler)
-window.addEventListener('click', windowClickHandler)

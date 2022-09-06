@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
 
 * {
-    /* background-color: rgb(0, 100, 0, 0.2); */
+    background-color: rgb(0, 100, 0, 0.2);
 }
 
 :root {
@@ -188,68 +188,50 @@ main {
     place-items: center;
 }
 
-/* ======================================= MODALS ====================================== */
+/* ======================================= ARROWS ====================================== */
 
-.modal {
-    display: block;
-    position: fixed;
-    z-index: 2;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: black;
-    background-color: rgb(0,0,0,.4);
-}
-
-.modal-content {
-    background-color: var(--pageBackground);
-    margin: 12em auto;
-    border: solid var(--hover) 2PX;
-    height: 53%;
-    width: 90%;
-    max-width: 1080px;
-}
-
-.modal-content > div {
+.arrow-container {
+    width: 95%;
+    max-width: 1130px;
+    margin: auto;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 540px;
-    margin-top: 1em;
+    justify-content: space-between;
 }
 
-.modal-content hr {
-    margin-top: 1em;
-}
 
-.images {
-    height: 540px;
-    width: 100%;
-    max-width: 960px;
-    position: relative;
-}
-
-.images img {
-    height: 540px;
-    width: 100%;
-    max-width: 960px;
+.modal-arrows {
     position: absolute;
-    transition: all 0.5s;
-    object-fit: cover;
+    max-width: 1000px;
 }
 
-.modal-navs {
-    display: grid;
-    gap: 300px;
-    max-height: 20px;
-    width: 500px;
+.arrow {
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    display: inline-block;
+    padding: 6px;
+    cursor: pointer;
+    z-index: 1;
+    transition: all .1s;
 }
 
-.modal-navs a {
-    text-decoration: none;
-    font-size: large;
+.arrow:active {
+    border-color: var(--hover);
+}
+
+#left, #modal-left{
+    transform: rotate(135deg) scale(1.5);
+}
+
+#left:hover, #modal-left:hover {
+    transform: rotate(135deg) scale(2);
+}
+
+#right, #modal-right {
+    transform: rotate(-45deg) scale(1.5);
+}
+
+#right:hover, #modal-right:hover {
+    transform: rotate(-45deg) scale(2);
 }
 
 /* ====================================== CAROUSEL ===================================== */
@@ -265,14 +247,14 @@ main {
 
 .slide-container {
     display: flex;
-    gap: 45px;
+    /* gap: 10px; */
     height: 100%;
-    transform: translate(-75px);
+    transform: translate(-5px);
     transition: all 1s;
 }
 
 .slide-container .side {
-    transform: scale(.7) translate(21px);
+    transform: scale(.7);
 }
 
 /* ==================================== PROJECT CARD =================================== */
@@ -363,50 +345,68 @@ main {
     font-style: italic;
 }
 
-/* ====================================== BUTTONS ====================================== */
+/* ======================================= MODALS ====================================== */
 
-.arrow-container {
-    width: 95%;
-    max-width: 1130px;
-    margin: auto;
+.modal {
+    display: block;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: black;
+    background-color: rgb(0,0,0,.4);
+}
+
+.modal-content {
+    background-color: var(--pageBackground);
+    margin: 12em auto;
+    border: solid var(--hover) 2PX;
+    height: 53%;
+    width: 90%;
+    max-width: 1080px;
+}
+
+.modal-content > div {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: 540px;
+    margin-top: 1em;
 }
 
+.modal-content hr {
+    margin-top: 1em;
+}
 
-.modal-arrows {
+.images {
+    height: 540px;
+    width: 100%;
+    max-width: 960px;
+    position: relative;
+}
+
+.images img {
+    height: 540px;
+    width: 100%;
+    max-width: 960px;
     position: absolute;
-    max-width: 1000px;
+    transition: all 0.5s;
+    object-fit: cover;
 }
 
-.arrow {
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
-    display: inline-block;
-    padding: 6px;
-    cursor: pointer;
-    z-index: 1;
-    transition: all .1s;
+.modal-navs {
+    display: grid;
+    gap: 300px;
+    max-height: 20px;
+    width: 500px;
 }
 
-.arrow:active {
-    border-color: var(--hover);
-}
-
-#left, #modal-left{
-    transform: rotate(135deg) scale(1.5);
-}
-
-#left:hover, #modal-left:hover {
-    transform: rotate(135deg) scale(2);
-}
-
-#right, #modal-right {
-    transform: rotate(-45deg) scale(1.5);
-}
-
-#right:hover, #modal-right:hover {
-    transform: rotate(-45deg) scale(2);
+.modal-navs a {
+    text-decoration: none;
+    font-size: large;
 }
 
 /* .project-block {
@@ -427,7 +427,7 @@ main {
     margin-top: 3vh;
 } */
 
-.project-text {
+/* .project-text {
     max-width: 100%;
     color: rgb(240, 240, 240, 1);
     font-size: 1.3rem;
@@ -454,26 +454,26 @@ main {
 } */
 
 /* grow elements */
-.grow {
+/* .grow {
     transition: all .1s ease-in-out;
 }
 
 .grow:hover {
     transform: scale(1.2);
-}
+} */
 
 /* expand or shrink elements */
 
-.expand {
+/* .expand {
     margin: .8rem 0px !important;
 }
 
 .shrink {
     margin: 0px !important;
-}
+} */
 
 /* ======================================== HIDE ======================================= */
-.hide, .hide > *, .hide > * > * {
+.hide, .hide * {
     display: block;
     height: 0;
     line-height: 0;
