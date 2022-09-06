@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
+
 * {
     /* background-color: rgb(0, 100, 0, 0.2); */
 }
@@ -5,6 +7,7 @@
 :root {
     --pageBackground: rgb(225, 225, 225);
     --hover: rgb(180, 165, 75);
+    --cardBar: rgb(255, 246, 193);
 }
 
 body {
@@ -47,7 +50,7 @@ main {
 }
 
 .navbar > span, #resume-link {
-    transition: all .2s linear;
+    transition: all .2s;
     text-underline-offset: .5em;
     text-decoration-color: #aaa;
     cursor: pointer;
@@ -218,27 +221,108 @@ main {
     transition: all 1s;
 }
 
-.slide-container  div {
+/* ------------------------------ PROJECT CARD ----------------------------- */
+
+.card {
+    background: url('./images/card-background.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
     width: 350px;
     height: 90%;
     margin-top: 2em;
+    border-radius: 10px;
+    border: solid black 10px;
+    font-family: 'Crimson Text', serif;
     transition: all 1s;
 }
 
-.slide-container  div  img {
+.info-bar {
+    background: var(--cardBar);
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2px 6px 2px 6px;
+    border-radius: 2.5em/5em;
+    border: solid black 1px;
+    font-weight: bold;
+}
+
+.title-bar {
+    margin-top: 5px;
+}
+
+.info-bar>div {
+    display: flex;
+    justify-content: right;
+    width: 60px;
+}
+
+.info-bar img {
+    border-radius: 25px;
+    box-shadow: 0 1px 2px 0;
+    margin: 0 1px 1px 1px;
+}
+
+.card-box {
+    background: var(--cardBar);
+    height: 263px;
+    width: 90%;
+    margin: 0 auto;
+    border-left: outset black 1px;
+    border-right: outset black 1px;
+}
+
+.picture {
+    display: grid;
+    place-items: center;
+}
+
+.picture > img {
+    height: 260px;
+    width: 310px;
+    margin: 0 auto;
+}
+
+/* .card-type {
+    
+} */
+
+.card-text {
+    display: grid;
+    place-items: center;
+    height: 200px;
+    border-bottom: outset black 1px;
+}
+
+.card-text div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: url('./images/parchment.png') center center/cover;
+    height: 98%;
+    width: 98%;
+    font-weight: bold;
+}
+
+.card-text p {
+    margin: 4px;
+}
+
+.card-text p:last-child {
+    font-style: italic;
+}
+
+/* .slide-container  div  img {
     object-fit: cover center;
     box-shadow: 0 4px 8px 0;
     height: 100%;
     width: 130%;
-}
-
-.slide-container .main {
-    z-index: 1;
-}
+} */
 
 .slide-container .side {
     transform: scale(.7) translate(21px);
-    /* z-index: 1; */
 }
 
 /* -------------------------------- BUTTONS -------------------------------- */
