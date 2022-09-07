@@ -20,19 +20,27 @@ const navbar = document.querySelector('.navbar')
 
 // Carousel
 const slideContainer = document.querySelector('.slide-container')
-const arrowContainer = document.querySelector('.arrow-container')
+const projectArrows = document.querySelector('.project-arrows')
 const slides = document.querySelectorAll('.card')
 
 // Modal
 const modals = document.querySelectorAll('.modal')
-// const resumeModal = document.querySelector('#resume-modal')
-// const resumeLink = document.querySelector('#resume-link')
+const modalImages = {slide1Current: 0, slide2Current: 0, slide3Current: 0, slide4Current: 0}
+modalImages.slide1 = document.querySelectorAll('#slide1-modal img')
+modalImages.slide2 = document.querySelectorAll('#slide2-modal img')
+modalImages.slide3 = document.querySelectorAll('#slide3-modal img')
+modalImages.slide4 = document.querySelectorAll('#slide4-modal img')
 
 // Global Variables
 // ------------------------------------------------------------ //
 
+// Page view tracker
 let currentPage = homePageContainer
+// Project slide tracker
 let currentSlide = 1
+// Modal image tracker
+let modalImageIndex = []
+
 
 // Utility Functions
 // ------------------------------------------------------------ //
@@ -99,18 +107,6 @@ function setMainSlide(currentSlide, direction) {
     }
 }
 
-// function expandOrShrink(element) {
-//     if(element.classList.contains('shrink')) {
-//         element.classList.toggle('shrink')
-//         element.classList.toggle('expand')
-//     } else if(element.classList.contains('expand')) {
-//         element.classList.toggle('expand')
-//         element.classList.toggle('shrink')
-//     } else {
-//         element.classList.toggle('expand')
-//     }
-// }
-
 // Event Handlers
 // ------------------------------------------------------------ //
 
@@ -136,8 +132,7 @@ function navHandler(e) {
     }
 }
 
-function carouselHandler(e) {
-    console.log(e.target.id)
+function projectCarouselHandler(e) {
     switch(e.target.id) {
         case 'left':
             if(currentSlide > 0) {
@@ -161,72 +156,8 @@ function carouselHandler(e) {
     slideContainer.style.transform = `translate(${translateChange}px)`
 }
 
-// function navExpandHandler(e) {
-//     if(e.target.tagName != 'IMG') return;
-    
-//     let profExpandTimeout, siteExpandTimeout
-
-//     switch(e.target.id) {
-
-//         case 'professional-links-nav':
-//             showHide(professionalLinksNav)
-//             showHide(professionalLinks)
-//             let profChildren = professionalLinks.children
-//             clearTimeout(profExpandTimeout)
-//             for(let i=0; i < profChildren.length; i++) {
-//                 profExpandTimeout = setTimeout(expandOrShrink, 10, profChildren[i])
-//             }
-//             break
-
-//         case 'sites-of-interest-nav':
-//             showHide(sitesOfInterestNav)
-//             showHide(sitesOfInterest)
-//             let siteChildren = sitesOfInterest.children
-//             clearTimeout(siteExpandTimeout)
-//             for(let i=0; i < siteChildren.length; i++) {
-//                 siteExpandTimeout = setTimeout(expandOrShrink, 10, siteChildren[i])
-//             }
-//             break
-
-//         default: return
-//     }
-// }
-
-// function navShrinkHandler(e) {
-//     if(e.target.tagName != 'DIV') return;
-
-//     let profNavTimeout, profLinksTimeout, siteNavTimeout, siteTimeout
-
-//     switch(e.target.id) {
-
-//         case 'professional-links-div': 
-//             clearTimeout(profNavTimeout)
-//             clearTimeout(profLinksTimeout)
-//             profNavTimeout = setTimeout(showHide, 500, professionalLinksNav)
-//             profLinksTimeout = setTimeout(showHide, 500, professionalLinks)
-//             let profChildren = professionalLinks.children
-//             for(let i=0; i < profChildren.length; i++) {
-//                 expandOrShrink(profChildren[i])
-//             }
-//             break
-
-//         case 'sites-of-interest-div':
-//             clearTimeout(siteNavTimeout)
-//             clearTimeout(siteTimeout)
-//             siteNavTimeout = setTimeout(showHide, 500, sitesOfInterestNav)
-//             siteTimeout = setTimeout(showHide, 500, sitesOfInterest)
-//             let siteChildren = sitesOfInterest.children
-//             for(let i=0; i < siteChildren.length; i++) {
-//                 expandOrShrink(siteChildren[i])
-//             }
-//             break
-
-//         default: return
-//     }
-// }
-
 function modalShowHandler(e) {
-    if(e.currentTarget.classList.contains('card')) {
+    if(e.currentTarget.classList.contains('card') && !e.currentTarget.classList.contains('side')) {
         switch(e.currentTarget.id) {
             case 'slide1':
                 showHide(modals[0])
@@ -247,13 +178,61 @@ function modalShowHandler(e) {
             default:
                 break
         }
+        showHide(projectArrows)
     }
 }
 
-function modalHideHandler(e) {
-    console.log('modalHideHandler')
-    if(e.target.classList.contains('modal')) {
-        showHide(e.target)
+function modalHandler(e) {
+
+    switch(true) {
+        case e.target.classList.contains('arrow'):
+            imageSwitch()
+            break
+        
+        case e.target.classList.contains('modal'):
+            showHide(e.target)
+            showHide(projectArrows)
+            break
+
+        default:
+            break
+    }
+    
+    function imageSwitch() {
+        let slide, current
+
+        switch(e.currentTarget.id) {
+            case 'slide1-modal':
+                slide = 'slide1'
+                current = 'slide1Current'
+                break
+            
+            case 'slide2-modal':
+                slide = 'slide2'
+                current = 'slide2Current'
+                break
+            
+            case 'slide3-modal':
+                slide = 'slide3'
+                current = 'slide3Current'
+                break
+            
+            case 'slide4-modal':
+                slide = 'slide4'
+                current = 'slide4Current'
+                break
+            
+            default:
+                break
+        }
+
+        showHide(modalImages[slide][modalImages[current]])
+        if(e.target.id == 'modal-left') {
+            modalImages[current] > 0 ? modalImages[current] -= 1 : modalImages[current] = 3
+        } else {
+            modalImages[current] < 3 ? modalImages[current] += 1 : modalImages[current] = 0
+        }
+        showHide(modalImages[slide][modalImages[current]])
     }
 }
 
@@ -283,10 +262,10 @@ function modalHideHandler(e) {
 // homeMenuNavContainer.addEventListener('click', homeMenuNavHandler)
 navbar.addEventListener('click', navHandler)
 
-arrowContainer.addEventListener('click', carouselHandler)
+projectArrows.addEventListener('click', projectCarouselHandler)
 // slideContainer.addEventListener('click', modalShowHandler)
 slides.forEach(slide => slide.addEventListener('click', modalShowHandler))
-modals.forEach(modal => modal.addEventListener('click', modalHideHandler))
+modals.forEach(modal => modal.addEventListener('click', modalHandler))
 
 // expanding navs
 // professionalLinksNav.addEventListener('mouseenter', navExpandHandler)

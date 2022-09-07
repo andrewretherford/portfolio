@@ -30,7 +30,6 @@ body {
 
 main {
     flex-grow: 1;
-    /* min-height: 91.5%; */
     width: 100%;
 }
 
@@ -194,6 +193,7 @@ main {
     margin: auto;
     display: flex;
     justify-content: space-between;
+    position: absolute;
 }
 
 .project-arrows {
@@ -203,7 +203,6 @@ main {
 
 
 .modal-arrows {
-    position: absolute;
     width: 95%;
     max-width: 1000px;
 }
@@ -246,7 +245,7 @@ main {
     display: flex;
     align-items: center;
     overflow: hidden;
-    position: absolute;
+    /* position: absolute; */
 }
 
 .slide-container {
@@ -259,6 +258,7 @@ main {
 
 .slide-container .side {
     transform: scale(.7);
+    box-shadow: 2px 4px 8px 0;
 }
 
 /* ==================================== PROJECT CARD =================================== */
@@ -272,6 +272,7 @@ main {
     border-radius: 10px;
     border: solid black 10px;
     font-family: 'Crimson Text', serif;
+    box-shadow: 4px 6px 20px 0;
     transition: all 1s;
 }
 
@@ -355,11 +356,11 @@ main {
     display: block;
     position: fixed;
     z-index: 2;
-    left: 0;
-    top: 0;
+    left: 0px;
+    top: 0px;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: black;
     background-color: rgb(0,0,0,.4);
 }
