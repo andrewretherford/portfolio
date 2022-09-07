@@ -50,7 +50,7 @@ main {
     align-items: center;
 }
 
-.navbar > span, #resume-link, .modal-link {
+.link {
     color: black;
     text-underline-offset: .5em;
     text-decoration-color: #aaa;
@@ -58,7 +58,7 @@ main {
     transition: all .2s;
 }
 
-.navbar > span:hover, #resume-link:hover, .modal-link:hover {
+.link:hover {
     color: var(--hover);
 }
 
@@ -77,68 +77,6 @@ main {
     align-items: center;
 }
 
-.home-menu-nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-/* inner navigation elements */
-.center-menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-width: 100vw;    
-}
-
-.inner-nav {
-    width: 40%;
-}
-
-#center-nav {
-    width: 60%;
-    margin: 0 10vw;
-}
-
-.inner-nav>img {
-    max-width: 100%;
-    max-height: 100%;
-    margin-top: 10%;
-    display: block;
-}
-
-/* outer navigation elements */
-.outer-nav {
-    height: auto;
-    max-width: 28vw;
-    margin-top: 8vh;
-}
-
-.outer-nav>img {
-    max-width: 100%;
-    display: block;
-}
-
-.professional-links, .sites-of-interest {
-    height: auto;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.professional-links>a, .sites-of-interest>a {
-    color: rgb(50, 50, 50, 1);
-    font-weight: bold;
-    font-size: 1.2rem;
-    text-decoration: none;
-    text-align: center;
-    margin: 0px;
-    transition: margin .5s;
-}
-
 /* ===================================================================================== */
 /* ====================================== ABOUT ME ===================================== */
 /* ===================================================================================== */
@@ -151,7 +89,7 @@ main {
     align-items: center;
 }
 
-.resume-content>iframe {
+.resume-content > iframe {
     width: 100%;
     height: 100%;
 }
@@ -237,7 +175,7 @@ main {
     transform: rotate(-45deg) scale(2);
 }
 
-/* ====================================== CAROUSEL ===================================== */
+/* ================================== PROJECT CAROUSEL ================================= */
 
 .carousel-container {
     height: 585px;
@@ -245,12 +183,10 @@ main {
     display: flex;
     align-items: center;
     overflow: hidden;
-    /* position: absolute; */
 }
 
 .slide-container {
     display: flex;
-    /* gap: 10px; */
     height: 100%;
     transform: translate(-5px);
     transition: all 1s;
@@ -293,7 +229,7 @@ main {
     margin-top: 5px;
 }
 
-.info-bar>div {
+.info-bar > div {
     display: flex;
     justify-content: right;
     width: 60px;
@@ -368,7 +304,6 @@ main {
 .modal-content {
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     background-color: var(--pageBackground);
     margin: 12em auto;
     border: solid var(--hover) 2PX;
@@ -405,9 +340,7 @@ main {
     width: 90%;
     top: 6%;
     left: 5%;
-    /* max-width: 960px; */
     position: absolute;
-    /* transition: all 0.5s; */
     object-fit: cover;
 }
 
@@ -424,71 +357,8 @@ main {
     font-size: large;
 }
 
-/* .project-block {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    max-width: 70vw;
-}
-
-.project {
-    width: 100%;
-    background-color: rgb(60, 60, 60, .5);
-    margin-bottom: 3vh;
-}
-
-.project-image {
-    width: 100%;
-    margin-top: 3vh;
-} */
-
-/* .project-text {
-    max-width: 100%;
-    color: rgb(240, 240, 240, 1);
-    font-size: 1.3rem;
-    text-align: justify;
-    padding: 0 1rem 0 1rem;
-}
-
-#last-project-text {
-    border-bottom: none;
-    padding-bottom: 0px;
-}
-
-.projects-center-block {
-    order: -1;
-}
-
-#project-back {
-    margin: 3vh auto;
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    color: gold;
-    background-color: rgb(55, 55, 55, 1);
-} */
-
-/* grow elements */
-/* .grow {
-    transition: all .1s ease-in-out;
-}
-
-.grow:hover {
-    transform: scale(1.2);
-} */
-
-/* expand or shrink elements */
-
-/* .expand {
-    margin: .8rem 0px !important;
-}
-
-.shrink {
-    margin: 0px !important;
-} */
-
 /* ======================================== HIDE ======================================= */
-.hide, .hide * {
+.hide {
     display: block;
     height: 0;
     line-height: 0;
@@ -496,159 +366,16 @@ main {
     opacity: 0;
 }
 
-/* ========================================================================= */
-/* ----------------------------- MEDIA QUERIES ----------------------------- */
-/* ========================================================================= */
-
-@media screen and (min-width: 800px) { /* --- Small Screens & Laptops --- */
-    
-/* -------------------- HOME PAGE -------------------- */
-
-    .home-menu-nav-container {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-        margin: auto;
-    }
-    
-    .center-menu {
-        max-width: 60vw;
-        justify-content: space-between;
-        flex-wrap: nowrap;
-        align-items: center;
-        order: 1;
-    }
-
-    .inner-nav {
-        max-width: 25%;
-    }
-
-    #center-nav {
-        max-width: 35%;
-        margin: 0px;
-        order: 1;
-    }
-
-    #project-showcase-container, #sites-of-interest-container {
-        order: 2;
-    }
-
-    .outer-nav {
-        height: auto;
-        width: 10vw;
-        margin: 0px;
-    }
-
-    .inner-nav>img, .outer-nav>img {
-        margin: 0px;
-    }
-
-    .professional-links, .sites-of-interest {
-        width: auto;
-    }
+.hide * {
+    display: none;
 }
 
-@media screen and (min-width: 1025px) { /* --- Desktops / Large Screens --- */
+/* ===================================================================================== */
+/* ----------------------------------- MEDIA QUERIES ----------------------------------- */
+/* ===================================================================================== */
 
-/* -------------------- BIO/RESUME PAGE -------------------- */
-
-    .bio-page-container {
-        width: 100vw;
-        margin: auto;
-        /* transform: translate(1920px); */
-    }
-
-    .bio-resume-container {
-        width: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .bio-container, .resume-container, #bio-back {
-        width: 65vw;
-        max-width: 1080px;
-        margin: 0px;
-    }
-
-    .bio-photo-container, .bio-text {
-        max-width: 100%;
-    }
-
-    .resume-block {
-        width: 100%;
-        height: 33.333%;
-    }
-
-    .resume-block>img {
-        height: 100%;
-        width: 100%;
-        display: block;
-    }
-
-    .bio-page-container {
-        max-width: 1080px;
-        margin: auto;
-    }
-
-    /* .bio-container {
-        max-width: 1025px;
-    } */
+@media screen and (min-width: 1080px) {
+    
     
 
-/* -------------------- PROJECT SHOWCASE -------------------- */
-
-    .projects-container {
-        height: 100;
-        flex-direction: row;
-    }
-
-    .project-block {
-        height: 100%;
-        width: 25vw;
-        justify-content: space-around;
-    }
-
-    .projects-center-block {
-        order: 0;
-        width: 40vw;
-    }
-    
 }
-
-
-@media screen and (min-width: 2160px) { /* --- Extra Large Screens --- */
- 
-/* -------------------- HOME PAGE -------------------- */
-
-    .home-menu-nav-container {
-        max-width: 2160px;
-    }
-
-    .outer-nav {
-        max-width: 216px;
-    }
-
-/* -------------------- BIO/RESUME PAGE -------------------- */
-
-
-/* -------------------- PROJECT SHOWCASE -------------------- */
-
-    .projects-container, #project-back {
-        max-width: 2160px;
-        margin: auto;
-    }
-
-    .project-block {
-        max-width: 432px;
-    }
-
-    .projects-center-block {
-        max-width: 864px;
-    }
-}
-
-

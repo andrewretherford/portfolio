@@ -12,9 +12,9 @@
     <div class="page-container">
         <header>
             <nav class="navbar">
-                <span class="current-menu-item" id='home-nav'>HOME</span>
-                <span id='bio-nav'>BIO/EXPERIENCE</span>
-                <span id='projects-nav'>PROJECTS</span>
+                <span class="link" id='projects-nav'>PROJECT SHOWCASE</span>
+                <span class="link current-menu-item" id='home-nav'>HOME</span>
+                <span class="link" id='bio-nav'>BIO/EXPERIENCE</span>
             </nav>
         </header>
     
@@ -22,57 +22,16 @@
             <!--========================================================================-->
             <!--================================= HOME =================================-->
             <!--========================================================================-->
-    
-            <!-- home page container -->
+
             <div class="home-page-container hide">
-                <!-- navigation bar -->
-                <!-- <nav class="home-menu-nav-container">
-                    <nav class="center-menu">
-                        <nav class="inner-nav" id="center-nav">
-                            <img src="images/portfolio-stub.png" alt="portfolio image" id="favorite-things-nav">
-                        </nav>
-                        <nav class="inner-nav grow" id="bio-resume-container">
-                            <img src="images/bio-nav-image.png" alt="portfolio image" id="bio-resume-nav">
-                        </nav>
-                        <nav class="inner-nav grow" id="project-showcase-container">
-                            <img src="images/project-nav-image.png" alt="portfolio image" id="project-showcase-nav">
-                        </nav>
-                    </nav>
-    
-                    <nav class="outer-nav" id="professional-links-container">
-                        <div class="professional-links hide" id="professional-links-div">
-                            <a href="https://github.com/andrewretherford" class="git-hub">GitHub</a>
-                            <a href="https://www.linkedin.com/in/andrew-retherford" class="linked-in">LinkedIn</a>
-                        </div>
-                        <img src="images/professional-links.png" alt="portfolio image" id="professional-links-nav">
-                    </nav>
-    
-                    <nav class="outer-nav" id="sites-of-interest-container">
-                        <div class="sites-of-interest hide" id="sites-of-interest-div">
-                            <a href="https://www.codewars.com/">Code Wars</a>
-                            <a href="https://fontawesome.com/">Font Awesome</a>
-                            <a href="https://www.youtube.com/channel/UCcMDMoNu66_1Hwi5-MeiQgw">Hydraulic Press Channel</a>
-                        </div>
-                        <img src="images/interesting-links.png" alt="portfolio image" id="sites-of-interest-nav">
-                    </nav>
-                </nav> -->
+                
             </div>
     
             <!--========================================================================-->
-            <!--=============================== ABOUT ME ===============================-->
+            <!--============================ BIO/EXPERIENCE ============================-->
             <!--========================================================================-->
-    
-            <!-- bio/resume page container -->
-            <div class="bio-page-container hide">
-                <!-- resume modal -->
-                <!-- <div class="modal hide" id="resume-modal">
-                    <div class="resume-content">
-                        <span class="close">&times;</span>
-                        <iframe src="./assets/Resume.pdf" frameborder="0"></iframe>
-                    </div>
-                </div> -->
 
-                <span id="resume-link">VIEW RESUME</span>
+            <div class="bio-page-container hide">
     
                 <div class="bio-text-container">
                     <p>I grew up in Carmel Valley which is about 30 minutes from Carmel by the Sea, and lived in that area until I was 17.  Eager to find my way, I moved around a bit for school and work, trying out different career paths.  I lived in New York for a while which was awesome, it was my first time living in a big city and I loved the culture there.  I also lived in Florida for a while before ending up in the Bay Area.</p>
@@ -93,13 +52,14 @@
             <div class="project-page-container">
 
                 <!--============================= CAROUSEL =============================-->
-                <!----------------- arrows ----------------->
+
+                <!-------------------------------- arrows -------------------------------->
                 <div class="arrow-container project-arrows">
                     <i class="arrow" id="left"></i>
                     <i class="arrow" id="right"></i>
                 </div>
                 
-                <!------------------ slides ----------------->
+                <!--------------------------------- slides ------------------------------->
                 <div class="carousel-container">
                     <div class="slide-container">
                         <div class="card side" id="slide1">
@@ -151,46 +111,8 @@
                         <div class="card side" id="slide3"><img src="images/projects/space_wars/space-wars.png" alt=""></div>
                         <div class="card side" id="slide4"><img src="images/js-pixel-art.png" alt=""></div>
                     </div>
-                    <!-- <div class="project-block projects-left-block">
-                        <div class="project">
-                            <a href="https://andrewretherford.github.io/duck-hunt/">
-                                <img src="images/duck-hunt.png" alt="project image" class="project-image">
-                            </a>
-                            <p class="project-text">An old classic.  This one was a class project and one of my first animated game attempts.  Not a huge deal but the nostalgia feels good =)</p>
-                        </div>
-    
-                        <div class="project">
-                            <a href="https://andrewretherford.github.io/js-pixart-lite/">
-                                <img src="images/js-pixel-art.png" alt="project image" class="project-image">
-                            </a>
-                            <p class="project-text">Another class project, and my first dive into creating DOM elements with JS.  Needless to say this one was fun and exciting for a new developer just getting his feet wet!</p>
-                        </div>
-                    </div>
-                    <div class="project-block projects-center-block">
-                        <div class="project star-project">
-                            <a href="https://andrewretherford.github.io/space-battle/">
-                                <img src="images/space-wars.png" alt="the opening screen of the Space Wars game" class="project-image">
-                            </a>
-                            <p class="project-text">An epic battle in space for the fate of humanity! Do you have what it takes to save the world?  Let's find out . . .</p>
-                        </div>
-                    </div>
-                    <div class="project-block projects-right-block">
-                        <div class="project">
-                            <a href="https://andrewretherford.github.io/tamagotchi/">
-                                <img src="images/tamagotchi.png" alt="project image" class="project-image">
-                            </a>
-                            <p class="project-text">In memory of a wasted youth.  Tamagotchi was an exercise in planning for a large project and was not something that we were meant to finish in the time given.  I just made it to MVP before the clock ran out, so I'm proudly posting this one.</p>
-                        </div>
-    
-                        <div class="project">
-                            <a href="https://andrewretherford.github.io/tic-tac-toe/">
-                                <img src="images/tic-tac-toe.png" alt="project image" class="project-image">
-                            </a>
-                            <p class="project-text" id="last-project-text">A great lab exercise meant to prepare us for our first large project.  I had a lot of fun experimenting and laying out the basics of a two player game!</p>
-                        </div>
-                    </div> -->
                 </div>
-
+                
                 <!--============================== MODALS ==============================-->
                 <div class="modal hide" id="slide1-modal">
                     <div class="modal-content">
@@ -208,8 +130,8 @@
                         </div>
                         <hr>
                         <div class="navbar modal-navs">
-                            <a class='modal-link' href="https://andrewretherford.github.io/space-battle/">Live Demo</a>
-                            <a class='modal-link' href="https://github.com/andrewretherford/space-battle">GitHub</a>
+                            <a class='link' href="https://andrewretherford.github.io/space-battle/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a class='link' href="https://github.com/andrewretherford/space-battle" target="_blank" rel="noopener noreferrer">GitHub</a>
                         </div>
                     </div>
                 </div>
