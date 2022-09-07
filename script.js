@@ -1,29 +1,25 @@
-// DOM Elements
-// ------------------------------------------------------------ //
+/* ============================================================================== */
+/* ================================ DOM Elements ================================ */
+/* ============================================================================== */
 
-// Page Containers
+/* ----------------------------------- Navbar ----------------------------------- */
+const navbar = document.querySelector('.navbar')
+
+/* ------------------------------- Page Containers ------------------------------ */
 const homePageContainer = document.querySelector('.home-page-container')
 const bioPageContainer = document.querySelector('.bio-page-container')
 const projectPageContainer = document.querySelector('.project-page-container')
 
-// Nav Elements
-const bioResumeNav = document.querySelector('#bio-resume-nav')
-const projectShowcaseNav = document.querySelector('project-showcase-nav')
-const bioBack = document.querySelector('#bio-back')
-const projectBack = document.querySelector('#project-back')
-const homeMenuNavContainer = document.querySelector('.home-menu-nav-container')
-const professionalLinksNav = document.querySelector('#professional-links-nav')
-const sitesOfInterestNav = document.querySelector('#sites-of-interest-nav')
-const professionalLinks = document.querySelector('.professional-links')
-const sitesOfInterest = document.querySelector('.sites-of-interest')
-const navbar = document.querySelector('.navbar')
+/* ------------------------------- Bio/Experience ------------------------------- */
 
-// Carousel
+
+/* ------------------------------ Project Carousel ------------------------------ */
+const carouselContainer = document.querySelector('.carousel-container')
 const slideContainer = document.querySelector('.slide-container')
 const projectArrows = document.querySelector('.project-arrows')
 const slides = document.querySelectorAll('.card')
 
-// Modal
+/* ------------------------------- Modal Carousel ------------------------------- */
 const modals = document.querySelectorAll('.modal')
 const modalImages = {slide1Current: 0, slide2Current: 0, slide3Current: 0, slide4Current: 0}
 modalImages.slide1 = document.querySelectorAll('#slide1-modal img')
@@ -31,19 +27,23 @@ modalImages.slide2 = document.querySelectorAll('#slide2-modal img')
 modalImages.slide3 = document.querySelectorAll('#slide3-modal img')
 modalImages.slide4 = document.querySelectorAll('#slide4-modal img')
 
-// Global Variables
-// ------------------------------------------------------------ //
+/* ============================================================================== */
+/* ============================== GLOBAL VARIABLES ============================== */
+/* ============================================================================== */
 
-// Page view tracker
+/* ----------------------------------- Navbar ----------------------------------- */
 let currentPage = homePageContainer
-// Project slide tracker
+
+/* ------------------------------ Project Carousel ------------------------------ */
 let currentSlide = 1
-// Modal image tracker
+
+/* ------------------------------- Modal Carousel ------------------------------- */
 let modalImageIndex = []
 
 
-// Utility Functions
-// ------------------------------------------------------------ //
+/* ============================================================================== */
+/* ============================== UTILITY FUNCTIONS ============================= */
+/* ============================================================================== */
 
 function showHide(element) {
     element.classList.toggle('hide')
@@ -66,16 +66,13 @@ function setMainSlide(currentSlide, direction) {
         slide.classList.toggle('side')
     }
 
-    console.log(currentSlide)
     switch(currentSlide) {
         case 0:
-            console.log('case 0')
             toggleSlide(slides[1])
             toggleSlide(slides[0])
             break
 
         case 1:
-            console.log('case 1')
             if(direction == 'left') {
                 toggleSlide(slides[2])
                 toggleSlide(slides[1])
@@ -86,7 +83,6 @@ function setMainSlide(currentSlide, direction) {
             break
 
         case 2:
-            console.log('case 2')
             if(direction == 'left') {
                 toggleSlide(slides[3])
                 toggleSlide(slides[2])
@@ -97,7 +93,6 @@ function setMainSlide(currentSlide, direction) {
             break
 
         case 3:
-            console.log('case 3')
             toggleSlide(slides[2])
             toggleSlide(slides[3])
             break
@@ -107,8 +102,9 @@ function setMainSlide(currentSlide, direction) {
     }
 }
 
-// Event Handlers
-// ------------------------------------------------------------ //
+/* ============================================================================== */
+/* =============================== EVENT HANDLERS =============================== */
+/* ============================================================================== */
 
 function navHandler(e) {
     if(e.target.tagName !== 'SPAN') return
@@ -132,7 +128,7 @@ function navHandler(e) {
     }
 }
 
-function projectCarouselHandler(e) {
+function projectCarouselHandler(e) {    
     switch(e.target.id) {
         case 'left':
             if(currentSlide > 0) {
@@ -152,8 +148,26 @@ function projectCarouselHandler(e) {
             break
     }
 
-    const translateChange = (currentSlide) * -370 + 365
-    slideContainer.style.transform = `translate(${translateChange}px)`
+    const style = getComputedStyle(carouselContainer)
+    if(style.width == '1100px') {
+        const translateChange = (currentSlide) * -370 + 365
+        slideContainer.style.transform = `translate(${translateChange}px)`
+    } else {
+        const translateChange = (currentSlide) * -370 + 15
+        slideContainer.style.transform = `translate(${translateChange}px)`
+    }
+}
+
+function windowResizeHandler() {
+    const style = getComputedStyle(carouselContainer)
+    console.log("- style.width", style.width)
+    if(style.width == '1100px') {
+        const translateChange = (currentSlide) * -370 + 365
+        slideContainer.style.transform = `translate(${translateChange}px)`
+    } else {
+        const translateChange = (currentSlide) * -370 + 15
+        slideContainer.style.transform = `translate(${translateChange}px)`
+    }
 }
 
 function modalShowHandler(e) {
@@ -236,45 +250,17 @@ function modalHandler(e) {
     }
 }
 
-// function toHomeHandler(e) {
-//     if(e.target.tagName != 'NAV') return;
+/* ============================================================================== */
+/* =============================== EVENT LISTENERS ============================== */
+/* ============================================================================== */
 
-//     switch(e.target.id) {
-
-//         case 'bio-back':
-//             showHide(bioPageContainer)
-//             showHide(homePageContainer)
-//             break
-
-//         case 'project-back':
-//             showHide(projectPageContainer)
-//             showHide(homePageContainer)
-//             break
-
-//         default: return
-//     }
-// }
-
-// event listeners 
-// ------------------------------------------------------------ //
-
-// home menu center navs
-// homeMenuNavContainer.addEventListener('click', homeMenuNavHandler)
+/* ----------------------------------- Navbar ----------------------------------- */
 navbar.addEventListener('click', navHandler)
 
+/* ------------------------------ Project Carousel ------------------------------ */
+window.addEventListener('resize', windowResizeHandler)
 projectArrows.addEventListener('click', projectCarouselHandler)
-// slideContainer.addEventListener('click', modalShowHandler)
+
+/* -------------------------------- Project Modal ------------------------------- */
 slides.forEach(slide => slide.addEventListener('click', modalShowHandler))
 modals.forEach(modal => modal.addEventListener('click', modalHandler))
-
-// expanding navs
-// professionalLinksNav.addEventListener('mouseenter', navExpandHandler)
-// sitesOfInterestNav.addEventListener('mouseenter', navExpandHandler)
-// professionalLinks.addEventListener('mouseleave', navShrinkHandler)
-// sitesOfInterest.addEventListener('mouseleave', navShrinkHandler)
-
-// back buttons
-// bioBack.addEventListener('click', toHomeHandler)
-// projectBack.addEventListener('click', toHomeHandler)
-
-// interaction listeners
