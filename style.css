@@ -5,9 +5,13 @@
 }
 
 :root {
+    /* color scheme */
     --pageBackground: rgb(225, 225, 225);
     --hover: rgb(180, 165, 75);
     --cardBar: rgb(255, 246, 193);
+    /* pie variables */
+    --b: 10px;
+    --c: rgb(190, 160, 70);
 }
 
 body {
@@ -78,40 +82,58 @@ main {
 }
 
 /* ===================================================================================== */
-/* ====================================== ABOUT ME ===================================== */
+/* =================================== BIO/EXPERIENCE ================================== */
 /* ===================================================================================== */
 
 .bio-page-container {
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.resume-content > iframe {
-    width: 100%;
-    height: 100%;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-#resume-link {
-    margin-top: 5em;
 }
 
 .bio-text-container {
-    height: 40em;
+    width: 80%;
+    margin: auto;
+}
+
+h3 {
+    text-align: center;
+    margin-top: 4vh;
+}
+
+.experience {
     width: 80%;
     margin: auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
+}
+
+.category {
+    margin: 0 10px;
+}
+
+.tag {
+    font-weight: bold;
+    text-align: center;
+}
+
+.pie {
+    width: 100px;
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    font-size: 1.5em;
+    font-weight: bold;    
+}
+
+.pie:before {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--p)*1%), #0000 0);
+    -webkit-mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
+    mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
 }
 
 /* ===================================================================================== */

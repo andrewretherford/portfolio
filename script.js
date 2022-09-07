@@ -11,7 +11,7 @@ const bioPageContainer = document.querySelector('.bio-page-container')
 const projectPageContainer = document.querySelector('.project-page-container')
 
 /* ------------------------------- Bio/Experience ------------------------------- */
-
+const pies = document.querySelectorAll('.pie')
 
 /* ------------------------------ Project Carousel ------------------------------ */
 const carouselContainer = document.querySelector('.carousel-container')
@@ -34,6 +34,22 @@ modalImages.slide4 = document.querySelectorAll('#slide4-modal img')
 /* ----------------------------------- Navbar ----------------------------------- */
 let currentPage = homePageContainer
 
+/* ------------------------------ Bio/Experience ------------------------------ */
+const projectCategories = {
+    fullstack: {count: 2, percent: null},
+    frontend: {count: 4, percent: null},
+    backend: {count: 2, percent: null},
+    javascript: {count: 4, percent: null},
+    css: {count: 4, percent: null},
+    html: {count: 2, percent: null},
+    react: {count: 2, percent: null},
+    express: {count: 1, percent: null},
+    mongoose: {count: 1, percent: null},
+    python: {count: 1, percent: null},
+    django: {count: 1, percent: null},
+    sql: {count: 1, percent: null}
+}
+
 /* ------------------------------ Project Carousel ------------------------------ */
 let currentSlide = 1
 
@@ -53,11 +69,35 @@ function toggle(element) {
     element.classList.toggle('vanish')
 }
 
+/* ----------------------------------- Navbar ----------------------------------- */
+
 function navigate(destination, origin) {
     !origin.classList.contains('hide') && origin.classList.add('hide')
     destination.classList.contains('hide') && destination.classList.remove('hide')
     currentPage = destination
 }
+
+/* ------------------------------- Bio/Experience ------------------------------- */
+
+function setPercentages(projects) {
+    const keys = Object.keys(projects)
+    let total = 0;
+
+    keys.forEach(key => total += projects[key].count)
+    keys.forEach(key => projects[key].percent = (projects[key].count / total).toFixed(4) * 100)
+}
+
+function setPies(pies, projects) {
+    pies.forEach(pie => {
+        pie.style = `--p:${projects[pie.classList[1]].percent}`
+        pie.innerText = `${projects[pie.classList[1]].percent}%`
+    })
+}
+
+setPercentages(projectCategories)
+setPies(pies, projectCategories)
+
+/* ------------------------------ Project Showcase ------------------------------ */
 
 function setMainSlide(currentSlide, direction) {
 
@@ -106,6 +146,8 @@ function setMainSlide(currentSlide, direction) {
 /* =============================== EVENT HANDLERS =============================== */
 /* ============================================================================== */
 
+/* ----------------------------------- Navbar ----------------------------------- */
+
 function navHandler(e) {
     if(e.target.tagName !== 'SPAN') return
     const currentMenuItem = document.querySelector('.current-menu-item')
@@ -127,6 +169,8 @@ function navHandler(e) {
         default: return
     }
 }
+
+/* ------------------------------ Project Showcase ------------------------------ */
 
 function projectCarouselHandler(e) {    
     switch(e.target.id) {
@@ -160,7 +204,7 @@ function projectCarouselHandler(e) {
 
 function windowResizeHandler() {
     const style = getComputedStyle(carouselContainer)
-    console.log("- style.width", style.width)
+
     if(style.width == '1100px') {
         const translateChange = (currentSlide) * -370 + 365
         slideContainer.style.transform = `translate(${translateChange}px)`
