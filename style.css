@@ -105,6 +105,7 @@ h3 {
 
 .project-distribution {
     width: 100%;
+    max-width: 1080px;
     transform: translate(0, -100px);
 }
 
