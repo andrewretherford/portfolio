@@ -12,6 +12,7 @@ const projectPageContainer = document.querySelector('.project-page-container')
 
 /* ------------------------------- Bio/Experience ------------------------------- */
 const pies = document.querySelectorAll('.pie')
+const subCategories = document.querySelectorAll('.sub-category')
 
 /* ------------------------------ Project Carousel ------------------------------ */
 const carouselContainer = document.querySelector('.carousel-container')
@@ -36,19 +37,36 @@ let currentPage = homePageContainer
 
 /* ------------------------------ Bio/Experience ------------------------------ */
 const projectCategories = {
-    fullstack: {count: 2, percent: null},
-    frontend: {count: 4, percent: null},
-    backend: {count: 2, percent: null},
-    javascript: {count: 4, percent: null},
-    css: {count: 4, percent: null},
-    html: {count: 2, percent: null},
-    react: {count: 2, percent: null},
-    express: {count: 1, percent: null},
-    mongoose: {count: 1, percent: null},
-    python: {count: 1, percent: null},
-    django: {count: 1, percent: null},
-    sql: {count: 1, percent: null}
+    fullstack: {
+        count: 2, 
+        percent: null, 
+        subCategories: {
+            django: {count: 1, percent: null},
+            javascript: {count: 4, percent: null},
+            python: {count: 1, percent: null},
+        }
+    },
+    frontend: {
+        count: 4, 
+        percent: null, 
+        subCategories: {
+            react: {count: 2, percent: null},
+            css: {count: 4, percent: null},
+            html: {count: 2, percent: null},
+        }
+    },
+    backend: {
+        count: 2, 
+        percent: null, 
+        subCategories: {
+            express: {count: 1, percent: null},
+            mongoose: {count: 1, percent: null},
+            mongodb: {count: 1, percent: null},
+            sql: {count: 1, percent: null}
+        }
+    },
 }
+console.log(projectCategories)
 
 /* ------------------------------ Project Carousel ------------------------------ */
 let currentSlide = 1
@@ -65,10 +83,6 @@ function showHide(element) {
     element.classList.toggle('hide')
 }
 
-function toggle(element) {
-    element.classList.toggle('vanish')
-}
-
 /* ----------------------------------- Navbar ----------------------------------- */
 
 function navigate(destination, origin) {
@@ -79,23 +93,35 @@ function navigate(destination, origin) {
 
 /* ------------------------------- Bio/Experience ------------------------------- */
 
-function setPercentages(projects) {
-    const keys = Object.keys(projects)
-    let total = 0;
+function setPercentages(categories) {
+    const keys = Object.keys(categories)
+    let total = 0
 
-    keys.forEach(key => total += projects[key].count)
-    keys.forEach(key => projects[key].percent = (projects[key].count / total).toFixed(4) * 100)
+    keys.forEach(key => {
+        let subTotal = 0
+        total += categories[key].count
+        let subKeys = Object.keys(categories[key].subCategories)
+        subKeys.forEach(subKey => subTotal += categories[key].subCategories[subKey].count)
+        subKeys.forEach(subKey => categories[key].subCategories[subKey].percent = (categories[key].subCategories[subKey].count / subTotal * 100).toFixed(2))
+    })
+    keys.forEach(key => categories[key].percent = (categories[key].count / total * 100).toFixed(2))
 }
 
-function setPies(pies, projects) {
+function displayPercentages(pies, subCategories, categories) {
     pies.forEach(pie => {
-        pie.style = `--p:${projects[pie.classList[1]].percent}`
-        pie.innerText = `${projects[pie.classList[1]].percent}%`
+        pie.style = `--p:${categories[pie.classList[1]].percent}`
+        pie.innerText = `${categories[pie.classList[1]].percent}%`
+        let subKeys = Object.keys(categories[pie.classList[1]].subCategories)
+        subCategories.forEach(category => subKeys.indexOf(category.classList[1]) != -1 && (category.innerText = `${categories[pie.classList[1]].subCategories[category.classList[1]].percent}%`))
     })
+
+    categoryKeys = Object.keys(categories)
+    
 }
 
 setPercentages(projectCategories)
-setPies(pies, projectCategories)
+
+displayPercentages(pies, subCategories, projectCategories)
 
 /* ------------------------------ Project Showcase ------------------------------ */
 
