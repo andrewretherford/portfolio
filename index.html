@@ -5,150 +5,239 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
     <title>Andrew Retherford</title>
 </head>
 <body>
-
-    <header></header>
-
-    <main>
-        <!-------------------- HOME PAGE -------------------->
-
-        <!-- home page container -->
-        <div class="home-page-container">
-            <!-- navigation bar -->
-            <nav class="home-menu-nav-container">
-                <nav class="center-menu">
-                    <nav class="inner-nav" id="center-nav">
-                        <img src="images/portfolio-stub.png" alt="portfolio image" id="favorite-things-nav">
-                    </nav>
-                    <nav class="inner-nav grow" id="bio-resume-container">
-                        <img src="images/bio-nav-image.png" alt="portfolio image" id="bio-resume-nav">
-                    </nav>
-                    <nav class="inner-nav grow" id="project-showcase-container">
-                        <img src="images/project-nav-image.png" alt="portfolio image" id="project-showcase-nav">
-                    </nav>
-                </nav>
-
-                <nav class="outer-nav" id="professional-links-container">
-                    <div class="professional-links hide" id="professional-links-div">
-                        <a href="https://github.com/andrewretherford" class="git-hub">GitHub</a>
-                        <a href="https://www.linkedin.com/in/andrew-retherford" class="linked-in">LinkedIn</a>
-                    </div>
-                    <img src="images/professional-links.png" alt="portfolio image" id="professional-links-nav">
-                </nav>
-                
-                <nav class="outer-nav" id="sites-of-interest-container">
-                    <div class="sites-of-interest hide" id="sites-of-interest-div">
-                        <a href="https://www.codewars.com/">Code Wars</a>
-                        <a href="https://fontawesome.com/">Font Awesome</a>
-                        <a href="https://www.youtube.com/channel/UCcMDMoNu66_1Hwi5-MeiQgw">Hydraulic Press Channel</a>
-                    </div>
-                    <img src="images/interesting-links.png" alt="portfolio image" id="sites-of-interest-nav">
-                </nav>  
+    <div class="page-container">
+        <header>
+            <nav class="navbar">
+                <span class="link current-menu-item" id='home-nav'>HOME</span>
+                <span class="link" id='bio-nav'>BIO/EXPERIENCE</span>
+                <span class="link" id='projects-nav'>PROJECT SHOWCASE</span>
             </nav>
-        </div>
+        </header>
+    
+        <main>
+            <!--========================================================================-->
+            <!--================================= HOME =================================-->
+            <!--========================================================================-->
 
-        <!-------------------- BIO/RESUME -------------------->
-
-        <!-- bio/resume page container -->
-        <div class="bio-page-container hide">
-            <!-- resume modal -->
-            <div class="modal hide" id="resume-modal">
-                <div class="resume-content">
-                    <!-- <span class="close">&times;</span> -->
-                    <iframe src="./assets/Resume.pdf" frameborder="0"></iframe>
-                </div>
+            <div class="home-page-container hide">
+                
             </div>
+    
+            <!--========================================================================-->
+            <!--============================ BIO/EXPERIENCE ============================-->
+            <!--========================================================================-->
 
-            <!-- bio and resume -->
-            <div class="bio-resume-container">
-                <!-- bio -->
-                <div class="bio-container">
-                    <!-- photo -->
-                    <div class="bio-photo-container"><img src="images/bio-stub.png" alt="bio photo" class="bio-photo"></div>
-
+            <div class="bio-page-container">
+                
+                <div>
+                    <h3>My Story</h3>
                     <div class="bio-text-container">
-                        <p class="bio-text">I grew up in Carmel Valley which is about 30 minutes from Carmel by the Sea, and lived in that area until I was 17.  Eager to find my way, I moved around a bit for school and work, trying out different career paths.  I lived in New York for a while which was awesome, it was my first time living in a big city and I loved the culture there.  I also lived in Florida for a while before ending up in the Bay Area.<br><br>
-
-                            When I started out I wasn’t sure what I wanted to do in life, so I went into Gemology on a recommendation from a close friend.  I enjoyed the field and had a great experience working for Tiffany & Co. in New York, but ultimately it wasn’t a good fit for me.  When I realized that, I decided to chase my dream of working with technology.  I moved back to California and started taking classes at the local community college.  I worked in restaurants while going to school to support myself, and ultimately got my BS in Computer Information Science.<br><br>
-                            
-                            After that I worked in IT support for a while and was able to put some of my skills to use, however it still wasn’t quite what I was looking for.  I have always been fascinated with building software and am very excited to finally be pursuing my dream of becoming a software engineer currently at GA.<br><br>
-                            
-                            In my personal life, I enjoy many activities from archery, surfing, and mountain biking, to gaming on my home built PC.  A personal goal of mine is to find a good D&D group and participate in an epic campaign.  Although I’ve dabbled in the past, I have never found the time or stayed in place long enough to find a committed group, and I love the idea of solving puzzles and facing challenges with a team in a creative setting while also making good friends.
-                            </p>
+                        <p>I grew up in Carmel Valley which is about 30 minutes from Carmel by the Sea, and lived in that area until I was 17.  Eager to find my way, I moved around a bit for school and work, trying out different career paths.  I lived in New York for a while which was awesome, it was my first time living in a big city and I loved the culture there.  I also lived in Florida for a while before ending up in the Bay Area.</p>
+                        <p>When I started out I wasn’t sure what I wanted to do in life, so I went into Gemology on a recommendation from a close friend.  I enjoyed the field and had a great experience working for Tiffany & Co. in New York, but ultimately it wasn’t a good fit for me.  When I realized that, I decided to chase my dream of working with technology.  I moved back to California and started taking classes at the local community college.  I worked in restaurants while going to school to support myself, and ultimately got my BS in Computer Information Science.</p>
+                        <p>After that I worked in IT support for a while and was able to put some of my skills to use, however it still wasn’t quite what I was looking for.  I have always been fascinated with building software and am very excited to finally be pursuing my dream of becoming a software engineer currently at GA.</p>
+                        <p>In my personal life, I enjoy many activities from archery, surfing, and mountain biking, to gaming on my home built PC.  A personal goal of mine is to find a good D&D group and participate in an epic campaign.  Although I’ve dabbled in the past, I have never found the time or stayed in place long enough to find a committed group, and I love the idea of solving puzzles and facing challenges with a team in a creative setting while also making good friends.</p>
                     </div>
-
                 </div>
 
-                <!-- resume -->
-                <div class="resume-container">
-                    <!-- <div class="resume-block"><img src="images/resume-stub.png" alt="resume image"></div> -->
-                    <div class="resume-block"><img src="images/resume-image.png" alt="resume image" class="resume-link"></div>
-                    <!-- <div class="resume-block"><img src="images/resume-stub.png" alt="resume image"></div> -->
+                <div class="project-distribution">
+                    <h3>Project Distribution Chart</h3>
+                    <div class="metrics">
+                        <div class="group">
+                            <div class="category">
+                                <p class="tag">Frontend</p>
+                                <div class="pie frontend"></div>
+                            </div>
+                            <p class="sub-tag"><span>React</span><span class="sub-category react"></span></p>
+                            <p class="sub-tag"><span>CSS</span><span class="sub-category css"></span></p>
+                            <p class="sub-tag"><span>HTML</span><span class="sub-category html"></span></p>
+                        </div>
+                    
+                        <div class="group">
+                            <div class="category">
+                                <p class="tag">Full Stack</p>
+                                <div class="pie fullstack"></div>
+                            </div>
+                            <p class="sub-tag"><span>Django</span><span class="sub-category django"></span></p>
+                            <p class="sub-tag"><span>JavaScript</span><span class="sub-category javascript"></span></p>
+                            <p class="sub-tag"><span>Python</span><span class="sub-category python"></span></p>
+                        </div>
+                        <div class="group">
+                            <div class="category">
+                                <p class="tag">Backend</p>
+                                <div class="pie backend"></div>
+                            </div>
+                            <p class="sub-tag"><span>Express</span><span class="sub-category express"></span></p>
+                            <p class="sub-tag"><span>Mongoose</span><span class="sub-category mongoose"></span></p>
+                            <p class="sub-tag"><span>MongoDB</span><span class="sub-category mongodb"></span></p>
+                            <p class="sub-tag"><span>SQL</span><span class="sub-category sql"></span></p>
+                        </div>
+                    </div>
                 </div>
-                <nav class="to-home" id="bio-back">back</nav>
+
             </div>
-            <!-- back to home -->
+    
+            <!--========================================================================-->
+            <!--=========================== PROJECT SHOWCASE ===========================-->
+            <!--========================================================================-->
+    
+            <div class="project-page-container hide">
 
-        </div>
+                <!--============================= CAROUSEL =============================-->
 
-        <!-------------------- PROJECT SHOWCASE -------------------->
-
-        <!-- project page container -->
-        <div class="project-page-container hide">
-
-            <!-- project container -->
-            <div class="projects-container">
-                <div class="project-block projects-left-block">
-                    <div class="project">
-                        <a href="https://andrewretherford.github.io/duck-hunt/">
-                            <img src="images/duck-hunt.png" alt="project image" class="project-image">
-                        </a>
-                        <p class="project-text">An old classic.  This one was a class project and one of my first animated game attempts.  Not a huge deal but the nostalgia feels good =)</p>
-                    </div>
-
-                    <div class="project">
-                        <a href="https://andrewretherford.github.io/js-pixart-lite/">
-                            <img src="images/js-pixel-art.png" alt="project image" class="project-image">
-                        </a>
-                        <p class="project-text">Another class project, and my first dive into creating DOM elements with JS.  Needless to say this one was fun and exciting for a new developer just getting his feet wet!</p>
+                <!-------------------------------- arrows -------------------------------->
+                <div class="arrow-container project-arrows">
+                    <i class="arrow" id="left"></i>
+                    <i class="arrow" id="right"></i>
+                </div>
+                
+                <!--------------------------------- slides ------------------------------->
+                <div class="carousel-container">
+                    <div class="slide-container">
+                        <div class="card side" id="slide1">
+                            <div class="info-bar title-bar">
+                                <span></span>
+                                <div>
+                                    <img src="./images/icons/javascript.jpg" alt="javascript">
+                                    <img src="./images/icons/css.png" alt="css">
+                                    <img src="./images/icons/html5.png" alt="html">
+                                </div>
+                            </div>
+                            <div class="card-box picture">
+                                <img src="images/projects/space_wars/space-wars.png" alt="">
+                            </div>
+                            <div class="info-bar card-type">
+                                <span>Turn Based - Browser Game</span>
+                            </div>
+                            <div class="card-box card-text">
+                                <div>
+                                    <p>An epic battle in space for the fate of humanity! This was my first browser app that was driven by event listeners as opposed to a program loop.</p>
+                                    
+                                    <p>Do you have what it takes to save the world?  Let's find out . . .</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card main" id="slide2">
+                            <div class="info-bar title-bar">
+                                <span>Space Wars</span>
+                                <div>
+                                    <img src="./images/icons/javascript.jpg" alt="javascript">
+                                    <img src="./images/icons/css.png" alt="css">
+                                    <img src="./images/icons/html5.png" alt="html">
+                                </div>
+                            </div>
+                            <div class="card-box picture">
+                                <img src="images/projects/space_wars/space-wars.png" alt="">
+                            </div>
+                            <div class="info-bar card-type">
+                                <span>Turn Based - Browser Game</span>
+                            </div>
+                            <div class="card-box card-text">
+                                <div>
+                                    <p>An epic battle in space for the fate of humanity! This was my first browser app that was driven by event listeners as opposed to a program loop.</p>
+                                    
+                                    <p>Do you have what it takes to save the world?  Let's find out . . .</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card side" id="slide3"><img src="images/projects/space_wars/space-wars.png" alt=""></div>
+                        <div class="card side" id="slide4"><img src="images/js-pixel-art.png" alt=""></div>
                     </div>
                 </div>
-                <div class="project-block projects-center-block">
-                    <div class="project star-project">
-                        <a href="https://andrewretherford.github.io/space-battle/">
-                            <img src="images/space-wars.png" alt="the opening screen of the Space Wars game" class="project-image">
-                        </a>
-                        <p class="project-text">An epic battle in space for the fate of humanity! Do you have what it takes to save the world?  Let's find out . . .</p>
+                
+                <!--============================== MODALS ==============================-->
+                <div class="modal hide" id="slide1-modal">
+                    <div class="modal-content">
+                        <div>
+                            <div class="images">
+                                <img src="./images/projects/space_wars/attack.png" alt="screen with attack prompt">
+                                <img class="hide" src="./images/projects/space_wars/fight_or_retreat.png" alt="choose to continue on or return to base for repairs">
+                                <img class="hide" src="./images/projects/space_wars/ships.png" alt="class declarations for ships">
+                                <img class="hide" src="./images/projects/space_wars/attack_handler.png" alt="code for handling the attack function">
+                            </div>
+                            <div class="arrow-container modal-arrows">
+                                <i class="arrow" id="modal-left"></i>
+                                <i class="arrow" id="modal-right"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="navbar modal-navs">
+                            <a class='link' href="https://andrewretherford.github.io/space-battle/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a class='link' href="https://github.com/andrewretherford/space-battle" target="_blank" rel="noopener noreferrer">GitHub</a>
+                        </div>
                     </div>
                 </div>
-                <div class="project-block projects-right-block">
-                    <div class="project">
-                        <a href="https://andrewretherford.github.io/tamagotchi/">
-                            <img src="images/tamagotchi.png" alt="project image" class="project-image">
-                        </a>
-                        <p class="project-text">In memory of a wasted youth.  Tamagotchi was an exercise in planning for a large project and was not something that we were meant to finish in the time given.  I just made it to MVP before the clock ran out, so I'm proudly posting this one.</p>
-                    </div>
-
-                    <div class="project">
-                        <a href="https://andrewretherford.github.io/tic-tac-toe/">
-                            <img src="images/tic-tac-toe.png" alt="project image" class="project-image">
-                        </a>
-                        <p class="project-text" id="last-project-text">A great lab exercise meant to prepare us for our first large project.  I had a lot of fun experimenting and laying out the basics of a two player game!</p>
+                <div class="modal hide" id="slide2-modal">
+                    <div class="modal-content">
+                        <div>
+                            <div class="images">
+                                <img src="./images/projects/space_wars/attack.png" alt="screen with attack prompt">
+                                <img class="hide" src="./images/projects/space_wars/fight_or_retreat.png" alt="choose to continue on or return to base for repairs">
+                                <img class="hide" src="./images/projects/space_wars/ships.png" alt="class declarations for ships">
+                                <img class="hide" src="./images/projects/space_wars/attack_handler.png" alt="code for handling the attack function">
+                            </div>
+                            <div class="arrow-container modal-arrows">
+                                <i class="arrow" id="modal-left"></i>
+                                <i class="arrow" id="modal-right"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="navbar modal-navs">
+                            <a class='modal-link' href="https://andrewretherford.github.io/space-battle/">Live Demo</a>
+                            <a class='modal-link' href="https://github.com/andrewretherford/space-battle">GitHub</a>
+                        </div>
                     </div>
                 </div>
+                <div class="modal hide" id="slide3-modal">
+                    <div class="modal-content">
+                        <div>
+                            <div class="images">
+                                <img src="./images/projects/space_wars/attack.png" alt="screen with attack prompt">
+                                <img class="hide" src="./images/projects/space_wars/fight_or_retreat.png" alt="choose to continue on or return to base for repairs">
+                                <img class="hide" src="./images/projects/space_wars/ships.png" alt="class declarations for ships">
+                                <img class="hide" src="./images/projects/space_wars/attack_handler.png" alt="code for handling the attack function">
+                            </div>
+                            <div class="arrow-container modal-arrows">
+                                <i class="arrow" id="modal-left"></i>
+                                <i class="arrow" id="modal-right"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="navbar modal-navs">
+                            <a class='modal-link' href="https://andrewretherford.github.io/space-battle/">Live Demo</a>
+                            <a class='modal-link' href="https://github.com/andrewretherford/space-battle">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal hide" id="slide4-modal">
+                    <div class="modal-content">
+                        <div>
+                            <div class="images">
+                                <img src="./images/projects/space_wars/attack.png" alt="screen with attack prompt">
+                                <img class="hide" src="./images/projects/space_wars/fight_or_retreat.png" alt="choose to continue on or return to base for repairs">
+                                <img class="hide" src="./images/projects/space_wars/ships.png" alt="class declarations for ships">
+                                <img class="hide" src="./images/projects/space_wars/attack_handler.png" alt="code for handling the attack function">
+                            </div>
+                            <div class="arrow-container modal-arrows">
+                                <i class="arrow" id="modal-left"></i>
+                                <i class="arrow" id="modal-right"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="navbar modal-navs">
+                            <a class='modal-link' href="https://andrewretherford.github.io/space-battle/">Live Demo</a>
+                            <a class='modal-link' href="https://github.com/andrewretherford/space-battle">GitHub</a>
+                        </div>
+                    </div>
+                </div> 
             </div>
-
-            <!-- back to home -->
-            <nav class="to-home" id="project-back">back</nav>
-
-        </div>
-
-    </main>
-
-    <footer></footer>
-
-    <script src="script.js"></script>
+    
+        </main>
+    
+        <footer></footer>
+    </div>
 </body>
 </html>

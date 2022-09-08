@@ -1,204 +1,336 @@
-// state variables
-// ------------------------------------------------------------ //
+/* ============================================================================== */
+/* ================================ DOM Elements ================================ */
+/* ============================================================================== */
+
+/* ----------------------------------- Navbar ----------------------------------- */
+const navbar = document.querySelector('.navbar')
+
+/* ------------------------------- Page Containers ------------------------------ */
+const homePageContainer = document.querySelector('.home-page-container')
+const bioPageContainer = document.querySelector('.bio-page-container')
+const projectPageContainer = document.querySelector('.project-page-container')
+
+/* ------------------------------- Bio/Experience ------------------------------- */
+const pies = document.querySelectorAll('.pie')
+const subCategories = document.querySelectorAll('.sub-category')
+
+/* ------------------------------ Project Carousel ------------------------------ */
+const carouselContainer = document.querySelector('.carousel-container')
+const slideContainer = document.querySelector('.slide-container')
+const projectArrows = document.querySelector('.project-arrows')
+const slides = document.querySelectorAll('.card')
+
+/* ------------------------------- Modal Carousel ------------------------------- */
+const modals = document.querySelectorAll('.modal')
+const modalImages = {slide1Current: 0, slide2Current: 0, slide3Current: 0, slide4Current: 0}
+modalImages.slide1 = document.querySelectorAll('#slide1-modal img')
+modalImages.slide2 = document.querySelectorAll('#slide2-modal img')
+modalImages.slide3 = document.querySelectorAll('#slide3-modal img')
+modalImages.slide4 = document.querySelectorAll('#slide4-modal img')
+
+/* ============================================================================== */
+/* ============================== GLOBAL VARIABLES ============================== */
+/* ============================================================================== */
+
+/* ----------------------------------- Navbar ----------------------------------- */
+let currentPage = homePageContainer
+
+/* ------------------------------ Bio/Experience ------------------------------ */
+const projectCategories = {
+    fullstack: {
+        count: 2, 
+        percent: null, 
+        subCategories: {
+            django: {count: 1, percent: null},
+            javascript: {count: 4, percent: null},
+            python: {count: 1, percent: null},
+        }
+    },
+    frontend: {
+        count: 4, 
+        percent: null, 
+        subCategories: {
+            react: {count: 2, percent: null},
+            css: {count: 4, percent: null},
+            html: {count: 2, percent: null},
+        }
+    },
+    backend: {
+        count: 2, 
+        percent: null, 
+        subCategories: {
+            express: {count: 1, percent: null},
+            mongoose: {count: 1, percent: null},
+            mongodb: {count: 1, percent: null},
+            sql: {count: 1, percent: null}
+        }
+    },
+}
+console.log(projectCategories)
+
+/* ------------------------------ Project Carousel ------------------------------ */
+let currentSlide = 1
+
+/* ------------------------------- Modal Carousel ------------------------------- */
+let modalImageIndex = []
 
 
-// functions
-// ------------------------------------------------------------ //
+/* ============================================================================== */
+/* ============================== UTILITY FUNCTIONS ============================= */
+/* ============================================================================== */
 
 function showHide(element) {
     element.classList.toggle('hide')
 }
 
-function expandOrShrink(element) {
-    if(element.classList.contains('shrink')) {
-        element.classList.toggle('shrink')
-        element.classList.toggle('expand')
-    } else if(element.classList.contains('expand')) {
-        element.classList.toggle('expand')
-        element.classList.toggle('shrink')
-    } else {
-        element.classList.toggle('expand')
+/* ----------------------------------- Navbar ----------------------------------- */
+
+function navigate(destination, origin) {
+    !origin.classList.contains('hide') && origin.classList.add('hide')
+    destination.classList.contains('hide') && destination.classList.remove('hide')
+    currentPage = destination
+}
+
+/* ------------------------------- Bio/Experience ------------------------------- */
+
+function setPercentages(categories) {
+    const keys = Object.keys(categories)
+    let total = 0
+
+    keys.forEach(key => {
+        let subTotal = 0
+        total += categories[key].count
+        let subKeys = Object.keys(categories[key].subCategories)
+        subKeys.forEach(subKey => subTotal += categories[key].subCategories[subKey].count)
+        subKeys.forEach(subKey => categories[key].subCategories[subKey].percent = (categories[key].subCategories[subKey].count / subTotal * 100).toFixed(2))
+    })
+    keys.forEach(key => categories[key].percent = (categories[key].count / total * 100).toFixed(2))
+}
+
+function displayPercentages(pies, subCategories, categories) {
+    pies.forEach(pie => {
+        pie.style = `--p:${categories[pie.classList[1]].percent}`
+        pie.innerText = `${categories[pie.classList[1]].percent}%`
+        let subKeys = Object.keys(categories[pie.classList[1]].subCategories)
+        subCategories.forEach(category => subKeys.indexOf(category.classList[1]) != -1 && (category.innerText = `${categories[pie.classList[1]].subCategories[category.classList[1]].percent}%`))
+    })
+
+    categoryKeys = Object.keys(categories)
+    
+}
+
+setPercentages(projectCategories)
+
+displayPercentages(pies, subCategories, projectCategories)
+
+/* ------------------------------ Project Showcase ------------------------------ */
+
+function setMainSlide(currentSlide, direction) {
+
+    function toggleSlide(slide) {
+        slide.classList.toggle('main')
+        slide.classList.toggle('side')
+    }
+
+    switch(currentSlide) {
+        case 0:
+            toggleSlide(slides[1])
+            toggleSlide(slides[0])
+            break
+
+        case 1:
+            if(direction == 'left') {
+                toggleSlide(slides[2])
+                toggleSlide(slides[1])
+            } else {
+                toggleSlide(slides[0])
+                toggleSlide(slides[1])
+            }
+            break
+
+        case 2:
+            if(direction == 'left') {
+                toggleSlide(slides[3])
+                toggleSlide(slides[2])
+            } else {
+                toggleSlide(slides[1])
+                toggleSlide(slides[2])
+            }
+            break
+
+        case 3:
+            toggleSlide(slides[2])
+            toggleSlide(slides[3])
+            break
+
+        default:
+            break
     }
 }
 
-// DOM elements 
-// ------------------------------------------------------------ //
+/* ============================================================================== */
+/* =============================== EVENT HANDLERS =============================== */
+/* ============================================================================== */
 
-// page containers
-const homePageContainer = document.querySelector('.home-page-container')
-const bioPageContainer = document.querySelector('.bio-page-container')
-const projectPageContainer = document.querySelector('.project-page-container')
+/* ----------------------------------- Navbar ----------------------------------- */
 
-// nav elements
-const bioResumeNav = document.querySelector('#bio-resume-nav')
-const projectShowcaseNav = document.querySelector('project-showcase-nav')
-const bioBack = document.querySelector('#bio-back')
-const projectBack = document.querySelector('#project-back')
-const homeMenuNavContainer = document.querySelector('.home-menu-nav-container')
-const professionalLinksNav = document.querySelector('#professional-links-nav')
-const sitesOfInterestNav = document.querySelector('#sites-of-interest-nav')
-const professionalLinks = document.querySelector('.professional-links')
-const sitesOfInterest = document.querySelector('.sites-of-interest')
-
-// modal
-const resumeModal = document.querySelector('#resume-modal')
-const resumeLink = document.querySelector('.resume-link')
-
-// event handlers
-// ------------------------------------------------------------ //
-
-function homeMenuNavHandler(e) {
-    if(e.target.tagName != 'IMG') return;
+function navHandler(e) {
+    if(e.target.tagName !== 'SPAN') return
+    const currentMenuItem = document.querySelector('.current-menu-item')
+    currentMenuItem.classList.remove('current-menu-item')
+    e.target.classList.add('current-menu-item')
     switch(e.target.id) {
-
-        case 'favorite-things-nav':
-            // showHide(homePageContainer)
+        case 'home-nav':
+            navigate(homePageContainer, currentPage)
             break
 
-        case 'bio-resume-nav':
-            showHide(homePageContainer)
-            showHide(bioPageContainer)
+        case 'bio-nav':
+            navigate(bioPageContainer, currentPage)
             break
 
-        case 'project-showcase-nav':
-            showHide(homePageContainer)
-            showHide(projectPageContainer)
+        case 'projects-nav':
+            navigate(projectPageContainer, currentPage)
+            break
+
+        default: return
+    }
+}
+
+/* ------------------------------ Project Showcase ------------------------------ */
+
+function projectCarouselHandler(e) {    
+    switch(e.target.id) {
+        case 'left':
+            if(currentSlide > 0) {
+                currentSlide--
+                setMainSlide(currentSlide, 'left')
+            }
+            break
+
+        case 'right':
+            if(currentSlide < 3) {
+                currentSlide++
+                setMainSlide(currentSlide, 'right')
+            }
             break
         
-        // case 'professional-links-nav':
-        //     showHide(professionalLinksNav)
-        //     showHide(professionalLinks)
-        //     break
+        default:
+            break
+    }
 
-        // case 'sites-of-interest-nav':
-        //     showHide(sitesOfInterestNav)
-        //     showHide(sitesOfInterest)
-        //     break
-
-        default: return
+    const style = getComputedStyle(carouselContainer)
+    if(style.width == '1100px') {
+        const translateChange = (currentSlide) * -370 + 365
+        slideContainer.style.transform = `translate(${translateChange}px)`
+    } else {
+        const translateChange = (currentSlide) * -370 + 15
+        slideContainer.style.transform = `translate(${translateChange}px)`
     }
 }
 
-function navExpandHandler(e) {
-    if(e.target.tagName != 'IMG') return;
+function windowResizeHandler() {
+    const style = getComputedStyle(carouselContainer)
+
+    if(style.width == '1100px') {
+        const translateChange = (currentSlide) * -370 + 365
+        slideContainer.style.transform = `translate(${translateChange}px)`
+    } else {
+        const translateChange = (currentSlide) * -370 + 15
+        slideContainer.style.transform = `translate(${translateChange}px)`
+    }
+}
+
+function modalShowHandler(e) {
+    if(e.currentTarget.classList.contains('card') && !e.currentTarget.classList.contains('side')) {
+        switch(e.currentTarget.id) {
+            case 'slide1':
+                showHide(modals[0])
+                break
+            
+            case 'slide2':
+                showHide(modals[1])
+                break
+            
+            case 'slide3':
+                showHide(modals[2])
+                break
+            
+            case 'slide4':
+                showHide(modals[3])
+                break
+            
+            default:
+                break
+        }
+        showHide(projectArrows)
+    }
+}
+
+function modalHandler(e) {
+
+    switch(true) {
+        case e.target.classList.contains('arrow'):
+            imageSwitch()
+            break
+        
+        case e.target.classList.contains('modal'):
+            showHide(e.target)
+            showHide(projectArrows)
+            break
+
+        default:
+            break
+    }
     
-    let profExpandTimeout, siteExpandTimeout
+    function imageSwitch() {
+        let slide, current
 
-    switch(e.target.id) {
+        switch(e.currentTarget.id) {
+            case 'slide1-modal':
+                slide = 'slide1'
+                current = 'slide1Current'
+                break
+            
+            case 'slide2-modal':
+                slide = 'slide2'
+                current = 'slide2Current'
+                break
+            
+            case 'slide3-modal':
+                slide = 'slide3'
+                current = 'slide3Current'
+                break
+            
+            case 'slide4-modal':
+                slide = 'slide4'
+                current = 'slide4Current'
+                break
+            
+            default:
+                break
+        }
 
-        case 'professional-links-nav':
-            showHide(professionalLinksNav)
-            showHide(professionalLinks)
-            let profChildren = professionalLinks.children
-            clearTimeout(profExpandTimeout)
-            for(let i=0; i < profChildren.length; i++) {
-                profExpandTimeout = setTimeout(expandOrShrink, 10, profChildren[i])
-            }
-            break
-
-        case 'sites-of-interest-nav':
-            showHide(sitesOfInterestNav)
-            showHide(sitesOfInterest)
-            let siteChildren = sitesOfInterest.children
-            clearTimeout(siteExpandTimeout)
-            for(let i=0; i < siteChildren.length; i++) {
-                siteExpandTimeout = setTimeout(expandOrShrink, 10, siteChildren[i])
-            }
-            break
-
-        default: return
+        showHide(modalImages[slide][modalImages[current]])
+        if(e.target.id == 'modal-left') {
+            modalImages[current] > 0 ? modalImages[current] -= 1 : modalImages[current] = 3
+        } else {
+            modalImages[current] < 3 ? modalImages[current] += 1 : modalImages[current] = 0
+        }
+        showHide(modalImages[slide][modalImages[current]])
     }
 }
 
-function navShrinkHandler(e) {
-    if(e.target.tagName != 'DIV') return;
+/* ============================================================================== */
+/* =============================== EVENT LISTENERS ============================== */
+/* ============================================================================== */
 
-    let profNavTimeout, profLinksTimeout, siteNavTimeout, siteTimeout
+/* ----------------------------------- Navbar ----------------------------------- */
+navbar.addEventListener('click', navHandler)
 
-    switch(e.target.id) {
+/* ------------------------------ Project Carousel ------------------------------ */
+window.addEventListener('resize', windowResizeHandler)
+projectArrows.addEventListener('click', projectCarouselHandler)
 
-        case 'professional-links-div': 
-            clearTimeout(profNavTimeout)
-            clearTimeout(profLinksTimeout)
-            profNavTimeout = setTimeout(showHide, 500, professionalLinksNav)
-            profLinksTimeout = setTimeout(showHide, 500, professionalLinks)
-            let profChildren = professionalLinks.children
-            for(let i=0; i < profChildren.length; i++) {
-                expandOrShrink(profChildren[i])
-            }
-            break
-
-        case 'sites-of-interest-div':
-            clearTimeout(siteNavTimeout)
-            clearTimeout(siteTimeout)
-            siteNavTimeout = setTimeout(showHide, 500, sitesOfInterestNav)
-            siteTimeout = setTimeout(showHide, 500, sitesOfInterest)
-            let siteChildren = sitesOfInterest.children
-            for(let i=0; i < siteChildren.length; i++) {
-                expandOrShrink(siteChildren[i])
-            }
-            break
-
-        default: return
-    }
-}
-
-function resumeLinkHandler(e) {
-    showHide(resumeModal)
-}
-
-function windowClickHandler(e) {
-    if(e.target == resumeModal) {
-        showHide(resumeModal)
-    }
-
-    // if(!homePageContainer.classList.contains('hide') && e.target.tagName != 'IMG') {
-    //     if(!professionalLinks.classList.contains('hide')) {
-    //         showHide(professionalLinks)
-    //         showHide(professionalLinksNav)
-    //     }
-    //     if(!sitesOfInterest.classList.contains('hide')) {
-    //         showHide(sitesOfInterest)
-    //         showHide(sitesOfInterestNav)
-    //     }
-    // }
-}
-
-function toHomeHandler(e) {
-    if(e.target.tagName != 'NAV') return;
-
-    switch(e.target.id) {
-
-        case 'bio-back':
-            showHide(bioPageContainer)
-            showHide(homePageContainer)
-            break
-
-        case 'project-back':
-            showHide(projectPageContainer)
-            showHide(homePageContainer)
-            break
-
-        default: return
-    }
-}
-
-// event listeners 
-// ------------------------------------------------------------ //
-
-// home menu center navs
-homeMenuNavContainer.addEventListener('click', homeMenuNavHandler)
-
-// expanding navs
-professionalLinksNav.addEventListener('mouseenter', navExpandHandler)
-sitesOfInterestNav.addEventListener('mouseenter', navExpandHandler)
-professionalLinks.addEventListener('mouseleave', navShrinkHandler)
-sitesOfInterest.addEventListener('mouseleave', navShrinkHandler)
-
-// back buttons
-bioBack.addEventListener('click', toHomeHandler)
-projectBack.addEventListener('click', toHomeHandler)
-
-// interaction listeners
-resumeLink.addEventListener('click', resumeLinkHandler)
-window.addEventListener('click', windowClickHandler)
+/* -------------------------------- Project Modal ------------------------------- */
+slides.forEach(slide => slide.addEventListener('click', modalShowHandler))
+modals.forEach(modal => modal.addEventListener('click', modalHandler))
