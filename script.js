@@ -35,7 +35,7 @@ modalImages.slide4 = document.querySelectorAll('#slide4-modal img')
 /* ----------------------------------- Navbar ----------------------------------- */
 let currentPage = homePageContainer
 
-/* ------------------------------ Bio/Experience ------------------------------ */
+/* ------------------------------- Bio/Experience ------------------------------- */
 const projectCategories = {
     fullstack: {
         count: 2, 
@@ -66,7 +66,6 @@ const projectCategories = {
         }
     },
 }
-console.log(projectCategories)
 
 /* ------------------------------ Project Carousel ------------------------------ */
 let currentSlide = 1
@@ -134,36 +133,23 @@ function setMainSlide(currentSlide, direction) {
 
     switch(currentSlide) {
         case 0:
-            toggleSlide(slides[1])
-            toggleSlide(slides[0])
+            toggleSlide(slides[currentSlide])
+            toggleSlide(slides[currentSlide + 1])
             break
-
-        case 1:
-            if(direction == 'left') {
-                toggleSlide(slides[2])
-                toggleSlide(slides[1])
-            } else {
-                toggleSlide(slides[0])
-                toggleSlide(slides[1])
-            }
-            break
-
-        case 2:
-            if(direction == 'left') {
-                toggleSlide(slides[3])
-                toggleSlide(slides[2])
-            } else {
-                toggleSlide(slides[1])
-                toggleSlide(slides[2])
-            }
-            break
-
+            
         case 3:
-            toggleSlide(slides[2])
-            toggleSlide(slides[3])
+            toggleSlide(slides[currentSlide])
+            toggleSlide(slides[currentSlide - 1])
             break
 
         default:
+            if (direction === 'left') {
+                toggleSlide(slides[currentSlide])
+                toggleSlide(slides[currentSlide + 1])
+            } else {
+                toggleSlide(slides[currentSlide])
+                toggleSlide(slides[currentSlide - 1])
+            }
             break
     }
 }
@@ -242,26 +228,7 @@ function windowResizeHandler() {
 
 function modalShowHandler(e) {
     if(e.currentTarget.classList.contains('card') && !e.currentTarget.classList.contains('side')) {
-        switch(e.currentTarget.id) {
-            case 'slide1':
-                showHide(modals[0])
-                break
-            
-            case 'slide2':
-                showHide(modals[1])
-                break
-            
-            case 'slide3':
-                showHide(modals[2])
-                break
-            
-            case 'slide4':
-                showHide(modals[3])
-                break
-            
-            default:
-                break
-        }
+        showHide(modals[e.currentTarget.id[5] -1])
         showHide(projectArrows)
     }
 }
@@ -283,38 +250,14 @@ function modalHandler(e) {
     }
     
     function imageSwitch() {
-        let slide, current
-
-        switch(e.currentTarget.id) {
-            case 'slide1-modal':
-                slide = 'slide1'
-                current = 'slide1Current'
-                break
-            
-            case 'slide2-modal':
-                slide = 'slide2'
-                current = 'slide2Current'
-                break
-            
-            case 'slide3-modal':
-                slide = 'slide3'
-                current = 'slide3Current'
-                break
-            
-            case 'slide4-modal':
-                slide = 'slide4'
-                current = 'slide4Current'
-                break
-            
-            default:
-                break
-        }
-
+        let slide = 'slide' + e.currentTarget.id[5]
+        let current = slide + 'Current'
+    
         showHide(modalImages[slide][modalImages[current]])
         if(e.target.id == 'modal-left') {
-            modalImages[current] > 0 ? modalImages[current] -= 1 : modalImages[current] = 3
+            modalImages[current] > 0 ? modalImages[current] -= 1 : modalImages[current] = modalImages[slide].length -1
         } else {
-            modalImages[current] < 3 ? modalImages[current] += 1 : modalImages[current] = 0
+            modalImages[current] < modalImages[slide].length -1 ? modalImages[current] += 1 : modalImages[current] = 0
         }
         showHide(modalImages[slide][modalImages[current]])
     }
