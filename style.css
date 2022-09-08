@@ -90,7 +90,6 @@ main {
 .brand-container {
     width: 80%;
     text-align: center;
-    /* margin: auto; */
 }
 
 /* ===================================================================================== */
@@ -161,7 +160,7 @@ h3 {
     mask: radial-gradient(farthest-side, #0000 calc(99% - var(--b)), #000 calc(100% - var(--b)));
 }
 
-.experience span {
+.group span {
     margin: 0 3px;
 }
 
