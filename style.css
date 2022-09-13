@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
 
 * {
-    /* background-color: rgb(0, 100, 0, 0.2); */
+    background-color: rgb(0, 100, 0, 0.2);
 }
 
 :root {
@@ -179,6 +179,7 @@ h3 {
     width: 100%;
     display: grid;
     place-items: center;
+    position: relative;
 }
 
 /* ======================================= ARROWS ====================================== */
