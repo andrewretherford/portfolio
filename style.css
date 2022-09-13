@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
 
 * {
-    /* background-color: rgb(0, 100, 0, 0.2); */
+    background-color: rgb(0, 100, 0, 0.2);
 }
 
 :root {
@@ -20,21 +20,25 @@ body {
     padding: 0px;
     height: 100vh;
     width: 100vw;
+    overflow: hidden;
 }
 
 .page-container {
+    display: flex;
+    flex-direction: column;
     background: url("./images/home-background.png") no-repeat center center/cover;
-    margin: auto;
+    background-attachment: fixed;
+    margin: 0 auto;
     height: 100%;
     width: 100%;
     max-width: 1920px;
-    display: flex;
-    flex-direction: column;
+    overflow: auto;
 }
 
 main {
     flex-grow: 1;
     width: 100%;
+    height: 90%;
 }
 
 .home-page-container, .bio-page-container, .project-page-container {
@@ -100,7 +104,10 @@ main {
     height: 100%;
     width: 100%;
     display: grid;
+    grid-template-rows: 1fr 1fr;
     place-items: center;
+    gap: 0px;
+    
 }
 
 h3 {
@@ -108,16 +115,14 @@ h3 {
 }
 
 .bio-text-container {
-    max-height: 400px;
     width: 80%;
-    margin: auto;
-    overflow: auto;
+    margin: 10% auto;
 }
 
 .project-distribution {
     width: 100%;
     max-width: 1080px;
-    transform: translate(0, -100px);
+    margin: auto;
 }
 
 .metrics {
@@ -290,7 +295,6 @@ h3 {
     box-shadow: 0 1px 2px 0;
     margin: 0 1px 1px 1px;
     object-fit: cover;
-    /* overflow: hidden; */
 }
 
 .card-box {
@@ -357,9 +361,9 @@ h3 {
     display: flex;
     flex-direction: column;
     background-color: var(--pageBackground);
-    margin: 12em auto;
+    margin: 20vh auto;
     border: solid var(--hover) 2PX;
-    height: 70vw;
+    height: 70vh;
     width: 90%;
     max-height: 845px;
     max-width: 1080px;
