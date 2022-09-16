@@ -180,7 +180,7 @@ h3 {
     width: 100%;
     display: grid;
     place-items: center;
-    position: relative;
+    /* position: relative; */
 }
 
 /* ======================================= ARROWS ====================================== */
@@ -194,8 +194,7 @@ h3 {
 
 .project-arrows {
     width: 90%;
-    max-width: 360px;
-    left: 20px;
+    left: 5%;
 }
 
 .modal-arrows {
@@ -237,16 +236,17 @@ h3 {
 
 .carousel-container {
     height: 550px;
-    width: 355px;
+    width: 345px;
     display: flex;
     align-items: center;
+    position: relative;
     overflow: hidden;
 }
 
 .slide-container {
     display: flex;
     height: 100%;
-    transform: translate(-340px);
+    transform: translate(-345px);
     transition: all 1s;
 }
 
@@ -445,15 +445,16 @@ h3 {
 /* ====================================== PROJECTS ===================================== */
 
 .carousel-container {
-    width: 1025px;
+    width: 1035px;
 }
 
 .slide-container {
-    transform: translate(-5px);
+    transform: translate(0px);
 }
 
 .project-arrows {
-    max-width: 1025px;
+    width: 95%;
+    left: 2.5%;
 }
 
 }

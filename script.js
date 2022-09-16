@@ -205,11 +205,11 @@ function projectCarouselHandler(e) {
     }
 
     const style = getComputedStyle(carouselContainer)
-    if(style.width == '1100px') {
-        const translateChange = (currentSlide) * -370 + 365
+    if(style.width == '1035px') {
+        const translateChange = (currentSlide) * -345 + 345
         slideContainer.style.transform = `translate(${translateChange}px)`
     } else {
-        const translateChange = (currentSlide) * -345 + 5
+        const translateChange = (currentSlide) * -345
         slideContainer.style.transform = `translate(${translateChange}px)`
     }
 }
@@ -217,11 +217,11 @@ function projectCarouselHandler(e) {
 function windowResizeHandler() {
     const style = getComputedStyle(carouselContainer)
 
-    if(style.width == '1100px') {
-        const translateChange = (currentSlide) * -345 + 365
+    if(style.width == '1035px') {
+        const translateChange = (currentSlide) * -345 + 345
         slideContainer.style.transform = `translate(${translateChange}px)`
     } else {
-        const translateChange = (currentSlide) * -345 + 15
+        const translateChange = (currentSlide) * -345
         slideContainer.style.transform = `translate(${translateChange}px)`
     }
 }
