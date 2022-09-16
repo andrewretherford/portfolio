@@ -209,7 +209,7 @@ function projectCarouselHandler(e) {
         const translateChange = (currentSlide) * -370 + 365
         slideContainer.style.transform = `translate(${translateChange}px)`
     } else {
-        const translateChange = (currentSlide) * -370 + 15
+        const translateChange = (currentSlide) * -345 + 5
         slideContainer.style.transform = `translate(${translateChange}px)`
     }
 }
@@ -218,10 +218,10 @@ function windowResizeHandler() {
     const style = getComputedStyle(carouselContainer)
 
     if(style.width == '1100px') {
-        const translateChange = (currentSlide) * -370 + 365
+        const translateChange = (currentSlide) * -345 + 365
         slideContainer.style.transform = `translate(${translateChange}px)`
     } else {
-        const translateChange = (currentSlide) * -370 + 15
+        const translateChange = (currentSlide) * -345 + 15
         slideContainer.style.transform = `translate(${translateChange}px)`
     }
 }

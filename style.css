@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&display=swap');
 
 * {
-    /* background-color: rgb(0, 100, 0, 0.2); */
+    background-color: rgb(0, 100, 0, 0.2);
 }
 
 :root {
@@ -194,7 +194,8 @@ h3 {
 
 .project-arrows {
     width: 90%;
-    max-width: 500px;
+    max-width: 360px;
+    left: 20px;
 }
 
 .modal-arrows {
@@ -235,8 +236,8 @@ h3 {
 /* ================================== PROJECT CAROUSEL ================================= */
 
 .carousel-container {
-    height: 585px;
-    width: 400px;
+    height: 550px;
+    width: 355px;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -245,7 +246,7 @@ h3 {
 .slide-container {
     display: flex;
     height: 100%;
-    transform: translate(-355px);
+    transform: translate(-340px);
     transition: all 1s;
 }
 
@@ -260,8 +261,7 @@ h3 {
     background: url('./images/card-background.png') no-repeat center center/cover;
     display: flex;
     flex-direction: column;
-    width: 350px;
-    height: 90%;
+    width: 325px;
     border-radius: 10px;
     border: solid black 10px;
     font-family: 'Crimson Text', serif;
@@ -315,8 +315,8 @@ h3 {
 }
 
 .picture > img {
-    height: 260px;
-    width: 310px;
+    height: 100%;
+    width: 100%;
     margin: 0 auto;
 }
 
@@ -445,7 +445,7 @@ h3 {
 /* ====================================== PROJECTS ===================================== */
 
 .carousel-container {
-    width: 1100px;
+    width: 1025px;
 }
 
 .slide-container {
@@ -453,7 +453,7 @@ h3 {
 }
 
 .project-arrows {
-    max-width: 1080px;
+    max-width: 1025px;
 }
 
 }
