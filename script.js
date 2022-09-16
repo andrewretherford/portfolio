@@ -154,6 +154,31 @@ function setMainSlide(currentSlide, direction) {
     }
 }
 
+function moveSlide() {
+    const style = getComputedStyle(carouselContainer)
+    let offset
+    
+    switch(style.width) {
+        case '1035px':
+            offset = 345
+            break
+
+        case '415px':
+            offset = 35
+            break
+        
+        case '345px':
+            offset = 0
+            break
+        
+        default:
+            break
+    }
+
+    const translateChange = (currentSlide) * -345 + offset
+    slideContainer.style.transform = `translate(${translateChange}px)`
+}
+
 /* ============================================================================== */
 /* =============================== EVENT HANDLERS =============================== */
 /* ============================================================================== */
@@ -204,26 +229,7 @@ function projectCarouselHandler(e) {
             break
     }
 
-    const style = getComputedStyle(carouselContainer)
-    if(style.width == '1035px') {
-        const translateChange = (currentSlide) * -345 + 345
-        slideContainer.style.transform = `translate(${translateChange}px)`
-    } else {
-        const translateChange = (currentSlide) * -345
-        slideContainer.style.transform = `translate(${translateChange}px)`
-    }
-}
-
-function windowResizeHandler() {
-    const style = getComputedStyle(carouselContainer)
-
-    if(style.width == '1035px') {
-        const translateChange = (currentSlide) * -345 + 345
-        slideContainer.style.transform = `translate(${translateChange}px)`
-    } else {
-        const translateChange = (currentSlide) * -345
-        slideContainer.style.transform = `translate(${translateChange}px)`
-    }
+    moveSlide()
 }
 
 function modalShowHandler(e) {
@@ -271,7 +277,7 @@ function modalHandler(e) {
 navbar.addEventListener('click', navHandler)
 
 /* ------------------------------ Project Carousel ------------------------------ */
-window.addEventListener('resize', windowResizeHandler)
+window.addEventListener('resize', moveSlide)
 projectArrows.addEventListener('click', projectCarouselHandler)
 
 /* -------------------------------- Project Modal ------------------------------- */

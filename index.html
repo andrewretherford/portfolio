@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="testing.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <title>Andrew Retherford</title>
@@ -214,6 +215,7 @@
                 </div>
                 
                 <!--============================== MODALS ==============================-->
+
                 <div class="modal hide" id="slide1-modal">
                     <div class="modal-content">
                         <div>
@@ -231,7 +233,13 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="navbar modal-navs">
+                        <div class="modal-description">
+                            <p>I built this app for myself as I was nearing the end of my bootcamp course and was looking for a good way to store and organize all of the notes and reference material that I had accumulated at that point.</p>
+                            <p>This was my first project using Django and was an excellent challenge given that the structure is such a departure from React.  Once I got the hang of MVT vs. MVC however, it was actually a joy to work with given Django's deep built-in functionality. Some of the key hurdles that I faced during this project were centered around learning Django, as we had only had the most basic introduction to setting up a Django app and creating functional views.  Learning how to pass data between templates, how to use class based views which have so much going on under the hood, and how to set up a full stack application with a file server for file uploads were chief among them.</p>
+                            <p>While I still prefer the flexibility of React for applications not centered around file storage and management, I do very much enjoy the utility that Django provides in this area.</p>
+                        </div>
+                        <hr>
+                        <div class="navbar" id="modal-navs">
                             <a class='link' href="https://codedex.herokuapp.com/">Live Demo</a>
                             <a class='link' href="https://github.com/andrewretherford/code_dex">GitHub</a>
                         </div>
