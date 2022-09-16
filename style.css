@@ -50,13 +50,14 @@ main {
 /* ===================================================================================== */
 
 .navbar {
-    height: 6em;
-    width: 40%;
-    margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    height: 6em;
+    width: 40%;
+    margin: auto;
+    font-size: .8em;
 }
 
 .link {
@@ -89,7 +90,7 @@ main {
 }
 
 .name-title {
-    margin: 5em 0 2em 0;
+    margin: 25% 0 2em 0;
 }
 
 .brand-container {
@@ -438,6 +439,7 @@ h3 {
 
 .navbar {
     flex-direction: row;
+    font-size: 1em;
 }
     
 /* ====================================== PROJECTS ===================================== */
