@@ -7,10 +7,10 @@ const navbar = document.querySelector('.navbar')
 
 /* ------------------------------- Page Containers ------------------------------ */
 const homePageContainer = document.querySelector('.home-page-container')
-const bioPageContainer = document.querySelector('.bio-page-container')
+const aboutPageContainer = document.querySelector('.about-page-container')
 const projectPageContainer = document.querySelector('.project-page-container')
 
-/* ------------------------------- Bio/Experience ------------------------------- */
+/* ------------------------------------ About ----------------------------------- */
 const pies = document.querySelectorAll('.pie')
 const subCategories = document.querySelectorAll('.sub-category')
 
@@ -35,7 +35,7 @@ modalImages.slide4 = document.querySelectorAll('#slide4-modal img')
 /* ----------------------------------- Navbar ----------------------------------- */
 let currentPage = homePageContainer
 
-/* ------------------------------- Bio/Experience ------------------------------- */
+/* ------------------------------------ About ------------------------------------ */
 const projectCategories = {
     fullstack: {
         count: 2, 
@@ -90,7 +90,7 @@ function navigate(destination, origin) {
     currentPage = destination
 }
 
-/* ------------------------------- Bio/Experience ------------------------------- */
+/* ------------------------------------ About ----------------------------------- */
 
 function setPercentages(categories) {
     const keys = Object.keys(categories)
@@ -122,7 +122,7 @@ setPercentages(projectCategories)
 
 displayPercentages(pies, subCategories, projectCategories)
 
-/* ------------------------------ Project Showcase ------------------------------ */
+/* ---------------------------------- Projects ---------------------------------- */
 
 function setMainSlide(currentSlide, direction) {
 
@@ -154,6 +154,31 @@ function setMainSlide(currentSlide, direction) {
     }
 }
 
+function moveSlide() {
+    const style = getComputedStyle(carouselContainer)
+    let offset
+    
+    switch(style.width) {
+        case '1035px':
+            offset = 345
+            break
+
+        case '415px':
+            offset = 35
+            break
+        
+        case '345px':
+            offset = 0
+            break
+        
+        default:
+            break
+    }
+
+    const translateChange = (currentSlide) * -345 + offset
+    slideContainer.style.transform = `translate(${translateChange}px)`
+}
+
 /* ============================================================================== */
 /* =============================== EVENT HANDLERS =============================== */
 /* ============================================================================== */
@@ -170,8 +195,8 @@ function navHandler(e) {
             navigate(homePageContainer, currentPage)
             break
 
-        case 'bio-nav':
-            navigate(bioPageContainer, currentPage)
+        case 'about-nav':
+            navigate(aboutPageContainer, currentPage)
             break
 
         case 'projects-nav':
@@ -182,7 +207,7 @@ function navHandler(e) {
     }
 }
 
-/* ------------------------------ Project Showcase ------------------------------ */
+/* ---------------------------------- Projects ---------------------------------- */
 
 function projectCarouselHandler(e) {    
     switch(e.target.id) {
@@ -204,26 +229,7 @@ function projectCarouselHandler(e) {
             break
     }
 
-    const style = getComputedStyle(carouselContainer)
-    if(style.width == '1100px') {
-        const translateChange = (currentSlide) * -370 + 365
-        slideContainer.style.transform = `translate(${translateChange}px)`
-    } else {
-        const translateChange = (currentSlide) * -370 + 15
-        slideContainer.style.transform = `translate(${translateChange}px)`
-    }
-}
-
-function windowResizeHandler() {
-    const style = getComputedStyle(carouselContainer)
-
-    if(style.width == '1100px') {
-        const translateChange = (currentSlide) * -370 + 365
-        slideContainer.style.transform = `translate(${translateChange}px)`
-    } else {
-        const translateChange = (currentSlide) * -370 + 15
-        slideContainer.style.transform = `translate(${translateChange}px)`
-    }
+    moveSlide()
 }
 
 function modalShowHandler(e) {
@@ -271,7 +277,7 @@ function modalHandler(e) {
 navbar.addEventListener('click', navHandler)
 
 /* ------------------------------ Project Carousel ------------------------------ */
-window.addEventListener('resize', windowResizeHandler)
+window.addEventListener('resize', moveSlide)
 projectArrows.addEventListener('click', projectCarouselHandler)
 
 /* -------------------------------- Project Modal ------------------------------- */

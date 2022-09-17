@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="testing.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
     <title>Andrew Retherford</title>
@@ -13,8 +14,8 @@
         <header>
             <nav class="navbar">
                 <span class="link current-menu-item" id='home-nav'>HOME</span>
-                <span class="link" id='bio-nav'>BIO/EXPERIENCE</span>
-                <span class="link" id='projects-nav'>PROJECT SHOWCASE</span>
+                <span class="link" id='about-nav'>ABOUT</span>
+                <span class="link" id='projects-nav'>PROJECTS</span>
             </nav>
         </header>
     
@@ -37,13 +38,13 @@
             </div>
     
             <!--========================================================================-->
-            <!--============================ BIO/EXPERIENCE ============================-->
+            <!--================================= ABOUT ================================-->
             <!--========================================================================-->
 
-            <div class="bio-page-container hide">
+            <div class="about-page-container hide">
                 
                 <div>
-                    <div class="bio-text-container">
+                    <div class="about-text-container">
                         <h3>My Story</h3>
                         <p>I grew up in Carmel Valley, CA which is about 30 minutes from Carmel by the Sea, and lived in that area until I was 17.  Eager to find my way, I moved around a bit for school and work, trying out different career paths.  I lived in New York for a while which was an amazing experience. It was my first time living in a big city and I loved the culture there.  I also lived in Florida for a while before ending up in the San Francisco Bay Area.</p>
                         <p>My first career was in the jewelry industry as a gemologist.  I went that route as I have a love of gemstones and a close friend recommended that I give it a try.  I enjoyed the field and had a great experience working for Tiffany & Co. in New York, but ultimately it wasn’t a good fit for me.  When I realized that it wasn't working out, I decided to chase my dream of working with technology.  I moved back to California and started taking classes at the local community college.  I worked in restaurants while going through school to support myself, and ultimately got my BS in Computer Information Science.</p>
@@ -90,7 +91,7 @@
             </div>
     
             <!--========================================================================-->
-            <!--=========================== PROJECT SHOWCASE ===========================-->
+            <!--=============================== PROJECTS ===============================-->
             <!--========================================================================-->
     
             <div class="project-page-container hide">
@@ -128,9 +129,9 @@
                             </div>
                             <div class="card-box card-text">
                                 <div>
-                                    <p>I built this one for myself at the end of a software engineering bootcamp as a way to bring everything I'd just learned into a single repository for easy reference.  It's flexible and allows users to create categories and upload content in the way that works best for them.</p>
+                                    <p>A flexible reference app which allows users to create categories and upload content in the way that works best for them. Originally designed for notes, but can be used for anything from lists to record keeping and more!</p>
                                     
-                                    <p>"Knowledge itself is power" - Francis Bacon in Meditationes Sacrae (1597)</p>
+                                    <p>"Knowledge itself is power" <br>- Francis Bacon in Meditationes Sacrae (1597)</p>
                                 </div>
                             </div>
                         </div>
@@ -153,9 +154,8 @@
                             </div>
                             <div class="card-box card-text">
                                 <div>
-                                    <p>React project making use of a third party backend.  This was a class project and my first attempt at React.  I really enjoy the component driven approach with React and the flexibility that it offers.</p>
-                                    
-                                    <p>"Well I'm bored . . . so what do you want to do now?" - Anonymous couch potato</p>
+                                    <p>A platform to browse and find details about popular TV shows. <br><br> Built on the TV Maze API.</p>
+                                    <p>"Well I'm bored . . . so what do you want to do now?" <br>- anonymous couch potato</p>
                                 </div>
                             </div>
                         </div>
@@ -181,9 +181,9 @@
                             </div>
                             <div class="card-box card-text">
                                 <div>
-                                    <p>Meet 'N Eat is a full stack app that I built with a group.  This was a great exercise in teamwork and dividing up tasks efficiently while not drifting apart in design scope and making sure that deliverables worked well together.</p>
+                                    <p>A social meetup app built around food. Make new friends who share a common interest, or just enjoy a meal in good company!</p>
                                     
-                                    <p>"Food is just less enjoyable when in the company of others." - No one ever</p>
+                                    <p>"Food is just less enjoyable when in the company of others." <br>- no one ever</p>
                                 </div>
                             </div>
                         </div>
@@ -204,9 +204,9 @@
                             </div>
                             <div class="card-box card-text">
                                 <div>
-                                    <p>An epic battle in space for the fate of humanity! This was my first browser app that was driven by event listeners as opposed to a program loop.</p>
+                                    <p>An epic battle in space for the fate of humanity! Play as the pilot of the USS Schwartzenegger who is the last man standing between Earth and certain annihilation.</p>
                                     
-                                    <p>Do you have what it takes to save the world?  Let's find out . . .</p>
+                                    <p>Do you have what it takes to save the world?  Let's find out . . . <br>- unnamed Space Force sergeant</p>
                                 </div>
                             </div>
                         </div>
@@ -214,6 +214,7 @@
                 </div>
                 
                 <!--============================== MODALS ==============================-->
+
                 <div class="modal hide" id="slide1-modal">
                     <div class="modal-content">
                         <div>
@@ -231,7 +232,13 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="navbar modal-navs">
+                        <div class="modal-description">
+                            <p>I built this app for myself as I was nearing the end of my software engineering bootcamp course and was looking for a good way to store and organize all of the notes and reference material that I had accumulated at that point.</p>
+                            <p>This was my first project using Django and was an excellent challenge given that the structure is such a departure from React.  Once I got the hang of MVT vs. MVC however, it was actually a joy to work with given Django's deep built-in functionality. Some of the key hurdles that I faced during this project were centered around learning Django, as we only had the most basic introduction to setting up a Django app and creating functional views.  Learning how to pass data between templates, how to use class based views which have so much going on under the hood, and how to set up a full stack application with a file server for file uploads were chief among them.</p>
+                            <p>While I still prefer the flexibility of React for applications not centered around file storage and management, I do very much enjoy the utility that Django provides in this area.</p>
+                        </div>
+                        <br>
+                        <div class="navbar" id="modal-navs">
                             <a class='link' href="https://codedex.herokuapp.com/">Live Demo</a>
                             <a class='link' href="https://github.com/andrewretherford/code_dex">GitHub</a>
                         </div>
@@ -252,9 +259,15 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="navbar modal-navs">
-                            <a class='modal-link' href="https://showcase-tv-database.netlify.app/">Live Demo</a>
-                            <a class='modal-link' href="https://github.com/andrewretherford/showcase">GitHub</a>
+                        <div class="modal-description">
+                            <p>A class project and my first foray into React as well as using a third party backend.</p>
+                            <p>I really enjoyed spending time on this project exploring as many different avenues of functionality in React as I could squeeze into it. I'm particularly proud that I was able to effectively learn useReducer and apply it in a single function for all of my back end calls.</p>
+                            <p>While I did have fun on this project, I was often frustrated by the challenge of using a backend that I hadn't built and which ended up dictating much of what I was able to present on the frontend.  I was eager to move on to full stack applications where I could build and modify the backend as needed.</p>
+                        </div>
+                        <br>
+                        <div class="navbar" id="modal-navs">
+                            <a class='link' href="https://showcase-tv-database.netlify.app/">Live Demo</a>
+                            <a class='link' href="https://github.com/andrewretherford/showcase">GitHub</a>
                         </div>
                     </div>
                 </div>
@@ -273,9 +286,15 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="navbar modal-navs">
-                            <a class='modal-link' href="https://meet-n-eat.netlify.app/home">Live Demo</a>
-                            <a class='modal-link' href="https://github.com/Venus-she-s-got-it">GitHub</a>
+                        <div class="modal-description">
+                            <p>Meet 'N Eat is a full stack app that I built with a group of 4 engineers.  This was a great exercise in teamwork and dividing up tasks efficiently while not drifting apart in design scope and making sure that deliverables built separately were able to integrate and work with the whole.</p>
+                            <p>I was the SCRUM master for this project and it was definitely a growth experience. I set the bar a bit high for my group unfortunately which lead to a lot of overtime and stress as we approached deadline. I learned the value of setting the bar lower for MVP and instead creating stretch goals for nice-to-have features.</p>
+                            <p>Hiccups aside, we all enjoyed the project and it was great to have a team where we could think about dividing up work according to everyone's strengths instead of tackling everything individually.</p>
+                        </div>
+                        <br>
+                        <div class="navbar" id="modal-navs">
+                            <a class='link' href="https://meet-n-eat.netlify.app/home">Live Demo</a>
+                            <a class='link' href="https://github.com/Venus-she-s-got-it">GitHub</a>
                         </div>
                     </div>
                 </div> 
@@ -294,9 +313,15 @@
                             </div>
                         </div>
                         <hr>
-                        <div class="navbar modal-navs">
-                            <a class='modal-link' href="https://andrewretherford.github.io/space-battle/">Live Demo</a>
-                            <a class='modal-link' href="https://github.com/andrewretherford/space-battle">GitHub</a>
+                        <div class="modal-description">
+                            <p>This was an early homework assignment from my software engineering bootcamp.  While pretty basic, it was my first time building a game using browser events as opposed to a game loop.</p>
+                            <p>I did initially build the game with a game loop using prompts for user input, however I finished early and thought it would be fun to try doing the whole thing with event listeners instead. It was an interesting experience as I found that using event listeners is structurally very different from a loop.</p>
+                            <p>While not terribly impressive, this is a project that I was very proud of when I built it.</p>
+                        </div>
+                        <br>
+                        <div class="navbar" id="modal-navs">
+                            <a class='link' href="https://andrewretherford.github.io/space-battle/">Live Demo</a>
+                            <a class='link' href="https://github.com/andrewretherford/space-battle">GitHub</a>
                         </div>
                     </div>
                 </div>
