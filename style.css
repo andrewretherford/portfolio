@@ -37,7 +37,7 @@ main {
     height: 90%;
 }
 
-.home-page-container, .bio-page-container, .project-page-container {
+.home-page-container, .about-page-container, .project-page-container {
     transition: opacity 1s ease;
 }
 
@@ -47,11 +47,12 @@ main {
 
 .navbar {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-around;
     align-items: center;
     height: 6em;
-    width: 40%;
+    width: 90%;
+    max-width: 500px;
     margin: auto;
     font-size: .8em;
 }
@@ -95,10 +96,10 @@ main {
 }
 
 /* ===================================================================================== */
-/* =================================== BIO/EXPERIENCE ================================== */
+/* ======================================= ABOUT ======================================= */
 /* ===================================================================================== */
 
-.bio-page-container {
+.about-page-container {
     height: 100%;
     width: 100%;
     display: grid;
@@ -112,7 +113,7 @@ h3 {
     text-align: center;
 }
 
-.bio-text-container {
+.about-text-container {
     width: 80%;
     margin: 10% auto;
 }
@@ -121,6 +122,7 @@ h3 {
     width: 100%;
     max-width: 1080px;
     margin: auto;
+    font-size: small;
 }
 
 .metrics {
@@ -338,6 +340,7 @@ h3 {
 
 .card-text p:last-child {
     font-style: italic;
+    font-size: .8em;
 }
 
 /* ======================================= MODALS ====================================== */
@@ -451,6 +454,13 @@ h3 {
 /* --------------------------------------- 680 PX -------------------------------------- */
 /* ------------------------------------------------------------------------------------- */
 @media only screen and (min-width: 680px) {
+
+
+/* ======================================= ABOUT ======================================= */
+
+.project-distribution {
+    font-size: medium;
+}
 
 /* ====================================== PROJECTS ===================================== */
 
