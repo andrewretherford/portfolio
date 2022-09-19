@@ -365,6 +365,7 @@ h3 {
     width: 90%;
     max-width: 1080px;
     overflow: auto;
+    position: relative;
 }
 
 .modal-content > div {
@@ -372,7 +373,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: fit-content;
+    height: 100%;
     width: 100%;
     position: relative;
 }
