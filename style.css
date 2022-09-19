@@ -281,7 +281,7 @@ h3 {
 
 .info-bar > div {
     display: flex;
-    /* width: auto; */
+    width: fit-content;
 }
 
 .info-bar img {
