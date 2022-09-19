@@ -356,8 +356,7 @@ h3 {
 }
 
 .modal-content {
-    display: flex;
-    flex-direction: column;
+    display: block;
     background-color: var(--pageBackground);
     margin: auto;
     border: solid var(--hover) 2PX;
@@ -375,7 +374,6 @@ h3 {
     height: 100%;
     width: 100%;
     position: relative;
-    flex: 1 1;
 }
 
 .modal-content hr {
