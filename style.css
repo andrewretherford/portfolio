@@ -87,7 +87,7 @@ main {
 }
 
 .name-title {
-    margin: 25% 0 2em 0;
+    margin: 10% 0 2em 0;
 }
 
 .brand-container {
@@ -102,11 +102,8 @@ main {
 .about-page-container {
     height: 100%;
     width: 100%;
-    display: grid;
-    grid-template-rows: 1fr 1fr;
-    place-items: center;
-    gap: 0px;
-    
+    display: flex;
+    flex-direction: column; 
 }
 
 h3 {
@@ -115,13 +112,13 @@ h3 {
 
 .about-text-container {
     width: 80%;
-    margin: 10% auto;
+    margin: 10vh auto;
 }
 
 .project-distribution {
     width: 100%;
     max-width: 1080px;
-    margin: auto;
+    margin: 0 auto;
     font-size: small;
 }
 
@@ -178,7 +175,6 @@ h3 {
     width: 100%;
     display: grid;
     place-items: center;
-    /* position: relative; */
 }
 
 /* ======================================= ARROWS ====================================== */
@@ -285,8 +281,7 @@ h3 {
 
 .info-bar > div {
     display: flex;
-    justify-content: right;
-    width: 60px;
+    /* width: auto; */
 }
 
 .info-bar img {
