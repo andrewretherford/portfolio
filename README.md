@@ -76,6 +76,8 @@ After I finished my course at General Assembly, I was able to complete many of t
 ~~- Fine tune some of the JS interactions and add more of them~~
 ~~- Spend some time sourcing images for buttons and backgrounds that are more thematic and personalized~~
 ~~- Add another page with details about my current activities and projects in development~~
+- Play with formatting of the project distribution chart on mobile to make it less squished
+- Adjust arrow width at all breakpoints so that they don't overlap modal content where avoidable
 
 ### Link to Live Page
 
