@@ -78,7 +78,7 @@
 ## JS
 
 ### home page
-- [ ] implement infinite scrolling menu **gold**
+~~- [ ] implement infinite scrolling menu **gold**~~
 
 ### bio/resume page
 - [x] implement modal for resume link **silver**
