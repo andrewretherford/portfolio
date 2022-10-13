@@ -5,9 +5,10 @@
     --pageBackground: rgb(225, 225, 225);
     --hover: rgb(180, 165, 75);
     --cardBar: rgb(255, 246, 193);
+    --arrows: rgb(85, 85, 85);
     /* pie variables */
     --b: 10px;
-    --c: rgb(190, 160, 70);
+    --c: rgb(200, 185, 75);
 }
 
 body {
@@ -82,7 +83,6 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* justify-content: start; */
     align-items: center;
 }
 
@@ -92,7 +92,12 @@ main {
 
 .brand-container {
     width: 80%;
+    max-width: 1080px;
     text-align: center;
+}
+
+.home-navs {
+    max-width: 250px;
 }
 
 /* ===================================================================================== */
@@ -112,6 +117,7 @@ h3 {
 
 .about-text-container {
     width: 80%;
+    max-width: 1080px;
     margin: 10vh auto;
 }
 
@@ -196,8 +202,8 @@ h3 {
 }
 
 .arrow {
-    border-bottom: 2px solid black;
-    border-right: 2px solid black;
+    border-bottom: 2px outset var(--hover);
+    border-right: 2px inset var(--hover);
     display: inline-block;
     padding: 6px;
     cursor: pointer;
@@ -206,7 +212,7 @@ h3 {
 }
 
 .arrow:active {
-    border-color: var(--hover);
+    border-color: var(--cardBar);
 }
 
 #left, #modal-left{
@@ -214,7 +220,7 @@ h3 {
 }
 
 #left:hover, #modal-left:hover {
-    transform: rotate(135deg) scale(2);
+    transform: rotate(135deg) scale(1.75);
 }
 
 #right, #modal-right {
@@ -222,7 +228,7 @@ h3 {
 }
 
 #right:hover, #modal-right:hover {
-    transform: rotate(-45deg) scale(2);
+    transform: rotate(-45deg) scale(1.75);
 }
 
 /* ================================== PROJECT CAROUSEL ================================= */
