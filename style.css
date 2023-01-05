@@ -391,19 +391,23 @@ h3 {
 }
 
 .images {
-    display: inline-block;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 240px;
     width: 320px;
-    overflow: hidden;
+    margin: 10px;
 }
 
-.images img {
+.images > div {
+    height: 90%;
     width: 90%;
-    top: 10%;
-    left: 5%;
-    position: absolute;
-    object-fit: contain;
+}
+
+.images > div > img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
 }
 
 .modal-description p {
@@ -425,11 +429,11 @@ h3 {
 
 /* ======================================== HIDE ======================================= */
 .hide {
-    display: block;
-    height: 0;
+    display: none;
+    /* height: 0;
     line-height: 0;
     overflow: hidden;
-    opacity: 0;
+    opacity: 0; */
 }
 
 .hide * {
@@ -509,5 +513,10 @@ h3 {
     height: 720px;
     width: 980px;
 }
+
+/* .images > img {
+    height: 720px;
+    width: 980px;
+} */
 
 }
