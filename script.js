@@ -23,10 +23,10 @@ const slides = document.querySelectorAll('.card')
 /* ------------------------------- Modal Carousel ------------------------------- */
 const modals = document.querySelectorAll('.modal')
 const modalImages = {slide1Current: 0, slide2Current: 0, slide3Current: 0, slide4Current: 0}
-modalImages.slide1 = document.querySelectorAll('#slide1-modal img')
-modalImages.slide2 = document.querySelectorAll('#slide2-modal img')
-modalImages.slide3 = document.querySelectorAll('#slide3-modal img')
-modalImages.slide4 = document.querySelectorAll('#slide4-modal img')
+modalImages.slide1 = document.querySelectorAll('#slide1-modal>div>div>div div')
+modalImages.slide2 = document.querySelectorAll('#slide2-modal>div>div>div div')
+modalImages.slide3 = document.querySelectorAll('#slide3-modal>div>div>div div')
+modalImages.slide4 = document.querySelectorAll('#slide4-modal>div>div>div div')
 
 /* ============================================================================== */
 /* ============================== GLOBAL VARIABLES ============================== */
