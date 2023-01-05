@@ -322,6 +322,7 @@ h3 {
     height: 100%;
     width: 100%;
     margin: 0 auto;
+    object-fit: cover;
 }
 
 .card-text {
