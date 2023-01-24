@@ -2,7 +2,8 @@
 
 :root {
     /* color scheme */
-    --pageBackground: rgb(225, 225, 225);
+    --pageBackground: rgb(190, 190, 190);
+    --modalBackground: rgb(225, 225, 225);
     --hover: rgb(180, 165, 75);
     --cardBar: rgb(255, 246, 193);
     --arrows: rgb(85, 85, 85);
@@ -368,7 +369,7 @@ h3 {
 
 .modal-content {
     display: block;
-    background-color: var(--pageBackground);
+    background-color: var(--modalBackground);
     margin: auto;
     border: solid var(--hover) 2PX;
     max-height: 90%;
